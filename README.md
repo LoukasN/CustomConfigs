@@ -8,5 +8,4 @@ Copy all the files into ~/.config/ and then logout
 
 # Dependancies
 
-<.> kitty <\n>
-<.> i3 <\n>
+kitty, i3, i3status, i3lock-color, rofi, nitrogen, picom
