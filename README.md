@@ -8,4 +8,4 @@ Copy all the files into ~/.config/ and then logout
 
 # Dependancies
 
-kitty, i3, i3status, i3lock-color, rofi, nitrogen, picom, neovim, setxkbmap.
+kitty, i3, i3status, rofi, nitrogen, picom, neovim.
