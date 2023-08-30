@@ -2,4 +2,4 @@
 
 #Moving files to Config folder
 echo "Copying folder to /home/$USER/.congig"
-cp /home/$USER/CustomConfig /home/$USER/.config/
+cp ../$PWD /home/$USER/.config/
