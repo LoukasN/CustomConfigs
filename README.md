@@ -14,8 +14,10 @@ bash Setup.sh
 <ul>
   <li>kitty</li>
   <li>i3</li>
+  <li>i3status</li>
   <li>rofi</li>
   <li>nitrogen</li>
   <li>picom</li>
   <li>neovim</li>
+  <li>lightdm</li>
 </ul>
