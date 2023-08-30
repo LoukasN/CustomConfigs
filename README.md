@@ -4,13 +4,11 @@ Configuration files for kitty, rofi, i3, i3status, neovim
 
 # How to use
 
-<html>
-  <body>
-    cd CustomConfigs/CustomScripts/
-    bash Setup.sh
-  </body>
-</html>
-  
+```bash
+cd CustomConfigs/CustomScripts/
+bash Setup.sh
+```
+
 # Dependancies
 <ul>
   <li>kitty</li>
