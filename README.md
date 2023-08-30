@@ -7,7 +7,7 @@ A script that automatically installs dependancies (works only <code>debian</code
 
 ```bash
 cd CustomConfigs/CustomScripts/
-bash Setup.sh
+bash Start.sh
 ```
 
 ## Dependancies
