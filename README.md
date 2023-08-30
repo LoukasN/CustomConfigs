@@ -4,8 +4,8 @@ Configuration files for kitty, rofi, i3, i3status, neovim
 
 # How to use
 
-cd CustomConfigs/CustomScripts/
-bash Setup.sh
+<code>cd CustomConfigs/CustomScripts/</code>
+<code>bash Setup.sh</code>
 
 # Dependancies
 <ul>
