@@ -1,15 +1,16 @@
 # CustomConfigs
 
-Configuration files for kitty, rofi, i3, i3status, neovim
+<p>Configuration files for kitty, rofi, i3, i3status, neovim.
+A script that automatically installs dependancies in <code>debian</code> is included.</p>
 
-# How to use
+## How to use
 
 ```bash
 cd CustomConfigs/CustomScripts/
 bash Setup.sh
 ```
 
-# Dependancies
+## Dependancies
 <ul>
   <li>kitty</li>
   <li>i3</li>
