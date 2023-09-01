@@ -20,4 +20,5 @@ bash Start.sh
   <li>picom</li>
   <li>neovim</li>
   <li>lightdm</li>
+  <li>ripgrep (for nvim plugin telescope)</li>
 </ul>
