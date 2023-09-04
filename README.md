@@ -7,7 +7,7 @@ A script that automatically installs dependancies (Only on <code>Pacman</code>).
 
 ```bash
 cd CustomConfigs/CustomScripts/
-bash Start.sh
+bash install.sh
 ```
 
 ## Dependancies
@@ -16,7 +16,7 @@ bash Start.sh
   <li>i3</li>
   <li>i3status</li>
   <li>rofi</li>
-  <li>nitrogen</li>
+  <li>feh</li>
   <li>picom</li>
   <li>neovim</li>
   <li>lightdm</li>
