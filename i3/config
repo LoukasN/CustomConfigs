@@ -102,8 +102,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -226,10 +226,10 @@ bar {
     urgent_workspace   #EC69A0 #DB3279 #FFFFFF
     binding_mode       #b691d3 #A07CBC #FFFFFF
   }
-  status_command i3status -c ~/.config/i3status/i3status.conf
+  status_command i3status -c /home/$USER/.config/i3status/i3status.conf
 }
 #default orientation on new window
-default_orientation horizontal
+#default_orientation horizontal
 
 #Border
 default_border pixel 1

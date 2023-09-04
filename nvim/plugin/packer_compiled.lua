@@ -143,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/loukas/.local/share/nvim/site/pack/packer/start/vim-Fugitive",
     url = "https://github.com/tpope/vim-Fugitive"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/loukas/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   }
 }
 
