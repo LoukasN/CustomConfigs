@@ -228,8 +228,9 @@ bar {
   }
   status_command i3status -c /home/$USER/.config/i3status/i3status.conf
 }
-#default orientation on new window
-#default_orientation horizontal
+#default windows
+default_orientation auto
+workspace_layout default
 
 #Border
 default_border pixel 1
@@ -247,7 +248,7 @@ hide_edge_borders smart
 #Return to previews workspace by pressing the current workspace keybind
 workspace_auto_back_and_forth no
 
-#Changing background image with nitrogen
+#Changing background image with feh
 exec feh --bg-scale ~/.config/i3/mountains.jpg
 
 #Enabling picom for transparency effects with picom
