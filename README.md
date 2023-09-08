@@ -1,7 +1,7 @@
 # CustomConfigs
 
 <p>Configuration files for kitty, rofi, i3, i3status, neovim.
-A script that automatically installs dependancies (Only on <code>Pacman</code>).</p>
+A script that automatically installs dependancies (Only with <code>Pacman</code>).</p>
 
 ## How to use
 
