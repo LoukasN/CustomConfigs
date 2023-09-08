@@ -29,3 +29,6 @@ vim.opt.updatetime = 50
 
 --leader key
 vim.g.mapleader = " "
+
+--Copying into the system clipboard
+vim.api.nvim_set_option("clipboard","unnamed")
