@@ -217,17 +217,18 @@ bar {
   mode dock
 
   colors {
-    background #00002C
-    statusline #C9C9FF
-    separator  #C9C9FF
-    focused_workspace  #4B0082 #6D00BD #FFFFFF
+    background #000000
+    statusline #FFFFFF
+    separator  #FFFFFF
+    focused_workspace  #202020 #646464 #FFFFFF
     active_workspace   #BFB9FA #294172 #FFFFFF
-    inactive_workspace #1E0034 #290047 #FFFFFF
+    inactive_workspace #161616 #202020 #FFFFFF
     urgent_workspace   #EC69A0 #DB3279 #FFFFFF
-    binding_mode       #b691d3 #A07CBC #FFFFFF
+    binding_mode       #2A2A2A #646464 #FFFFFF
   }
-  status_command i3status -c /home/$USER/.config/i3status/i3status.conf
+  status_command i3status -c ~/.config/i3status/i3status.conf
 }
+
 #default windows
 default_orientation auto
 workspace_layout default
@@ -240,7 +241,7 @@ focus_follows_mouse no
 
 #Gap between borders of apps
 #if one app it removes it
-gaps inner 6
+gaps inner 3
 smart_borders on
 smart_gaps on
 hide_edge_borders smart

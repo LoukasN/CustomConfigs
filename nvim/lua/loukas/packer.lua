@@ -18,8 +18,8 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-Fugitive')
   use('mhinz/vim-startify')
-  use{ 'catppuccin/nvim', as = 'catppuccin' }
   use('sudormrfbin/cheatsheet.nvim')
+  use{ "catppuccin/nvim", as = 'catppuccin' }
 
   use {
   'VonHeikemen/lsp-zero.nvim',
