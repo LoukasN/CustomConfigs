@@ -1,3 +1,2 @@
-//@theme "/usr/share/rofi/themes/Deep-Purple.rasi"
-//@theme "/usr/share/rofi/themes/Arc.rasi"
-@theme "~/.config/rofi/Deep-Purple.rasi"
+//@theme "~/.config/rofi/Deep-Purple.rasi"
+@theme "~/.config/rofi/Casual-Dark.rasi"
