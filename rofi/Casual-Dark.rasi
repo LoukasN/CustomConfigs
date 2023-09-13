@@ -170,6 +170,7 @@ textbox-prompt-colon {
     text-color: @selected-normal-foreground;
 }
 configuration{
+    font:         "Hack 12";
     display-drun: "Open";
     display-run:  "Execute";
     show-icons:   true;
