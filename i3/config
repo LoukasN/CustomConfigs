@@ -105,7 +105,7 @@ bindsym $mod+Shift+Right move right
 # toggle split orientation 
 bindsym $mod+e split toggle
 
-# automat
+# automatic change of orientation
 for_window [class=.*] split toggle
 
 # enter fullscreen mode for the focused container
@@ -130,8 +130,8 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1:"
+set $ws2 "2:"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -152,6 +152,10 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+# switch to next/previous workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -244,6 +248,9 @@ bar {
 default_orientation auto
 workspace_layout default
 
+# set floating per app
+for_window [class="calculator" instance="calculator"] floating enable
+
 #Border
 default_border pixel 1
 
@@ -261,7 +268,7 @@ hide_edge_borders smart
 workspace_auto_back_and_forth no
 
 #Changing background image with feh
-exec feh --bg-fill ~/.config/i3/wallpapers/OhNo.jpg
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/OhNo.jpg
 
 #Enabling picom for transparency effects with picom
 exec_always picom -f -b --vsync 
