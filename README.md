@@ -16,9 +16,10 @@ bash install.sh
   <li>i3</li>
   <li>i3status</li>
   <li>rofi</li>
-  <li>feh</li>
+  <li>nitrogen</li>
   <li>picom</li>
   <li>neovim</li>
   <li>lightdm</li>
+  <li>packer (from github)</li>
   <li>ripgrep (for nvim plugin telescope)</li>
 </ul>
