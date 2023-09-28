@@ -15,3 +15,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>x", "<cmd>chmod +x %<CR>, { silent = true }")
 --Open cheatsheet
 vim.keymap.set("n", "<leader>h", "<cmd>Cheatsheet<CR>")
+--Terminal
+vim.keymap.set("n", "<F5>", "<cmd>terminal<CR>A")
+vim.keymap.set("t", "<F5>", "<C-d><CR>")

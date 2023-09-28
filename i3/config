@@ -53,6 +53,8 @@ floating_modifier $mod
 
 # Display Resolution
 exec_always xrandr --output eDP --mode 1920x1080
+# Second monitor
+exec_always xrandr --output HDMI-A-0 --auto --right-of eDP
 
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -236,7 +238,7 @@ bar {
     statusline #FFFFFF
     separator  #FFFFFF
     focused_workspace  #202020 #646464 #FFFFFF
-    active_workspace   #BFB9FA #294172 #FFFFFF
+    active_workspace   #202020 #646464 #FFFFFF
     inactive_workspace #161616 #202020 #FFFFFF
     urgent_workspace   #EC69A0 #DB3279 #FFFFFF
     binding_mode       #2A2A2A #646464 #FFFFFF
@@ -266,10 +268,9 @@ hide_edge_borders smart
 #Return to previews workspace by pressing the current workspace keybind
 workspace_auto_back_and_forth no
 
-#Changing background image with feh
-exec --no-startup-id sleep 1 && nitrogen --set-auto ~/.config/i3/wallpapers/mountains.jpg
-
-#Enabling picom for transparency effects with picom
+#Changing background image with nitrogen/feh
+exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/wallpapers/Dark_planet.jpg ~/.config/i3/wallpapers/spaceship.jpg
+#Enabling picom for transparency effects and animations with picom
 exec_always picom -f -b --vsync 
 
 #Shortcuts for laptop
@@ -295,10 +296,18 @@ mode "$mode_system"{
 bindsym $mod+Shift+Delete mode "$mode_system"
 
 # touchpad tweaks
-exec synclient PalmDetect=1 # enable palm detect 
+# enable palm detect 
+exec synclient PalmDetect=1 
 exec synclient TapButton1=0
 exec synclient TapButton2=0
 exec synclient TapButton3=0
+exec xinput --set-prop 11 'libinput Natural Scrolling Enabled' 1
 
 # Screenshots
 bindsym Print exec scrot ~/Pictures/screenshots/scrot_%F.png && notify-send 'Screenshot taken'
+
+# Auth with gnome-polkit
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Dim the screen
+exec --no-startup-id xset s 480 dpms 600 600 600
