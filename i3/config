@@ -39,15 +39,15 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -e --blur=0.85
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
+set $refresh_i3status pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 #Language change
-exec setxkbmap -layout us,gr
-exec setxkbmap -option 'grp:alt_shift_toggle'
+exec_always setxkbmap -layout us,gr
+exec_always setxkbmap -option 'grp:alt_shift_toggle'
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -89,10 +89,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -121,10 +121,10 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent
@@ -209,13 +209,13 @@ bindsym $mod+r mode "resize"
 
 #Scratchpad
 # Make the currently focused window a scratchpad
-bindsym $mod+minus move scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+Shift+minus scratchpad show
+bindsym $mod+minus scratchpad show
 
 # class                 border  bground text    indicator child_border
-client.focused          #83CAFA #51A2DA #FFFFFF #FFFFFF   #FFFFFF
+client.focused          #83CAFA #51A2DA #FFFFFF #222222   #FFFFFF
 client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
 client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
@@ -230,7 +230,8 @@ bar {
   strip_workspace_numbers yes
   i3bar_command i3bar --transparency
   tray_output none
-  status_command i3status -c ~/.config/i3status/i3status.conf
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  #status_command i3status -c ~/.config/i3status/i3status.conf
   font pango:HackNerdFonts 10
   #Change i3status visibility dock|invisible
   mode dock
@@ -280,7 +281,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 #Power off, restart and hibernate
 set $Locker i3lock -e --blur=0.85 && sleep 1
-set $mode_system Press (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system Press (l) Lock, (e) Logout, (s) Suspend, (h) Hibernate, (r) Reboot, (Shift+s) Shutdown
 mode "$mode_system"{
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
@@ -311,6 +312,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Dim the screen
 exec --no-startup-id xset s 480 dpms 600 600 600
+
 # This 3 lines are written by the script (uses feh) located in ~/.config/rofi/rofi-wallpaper-changer
 # Changing wallpaper using feh
-exec_always --no-startup-id sleep 1 && feh --bg-fill /home/loukas/Pictures/wallpapers/Purple_waves.jpg /home/loukas/Pictures/wallpapers/Dark_planet.jpg
+exec_always --no-startup-id sleep 1 && feh --bg-fill /home/loukas/Pictures/wallpapers/Dark_planet.jpg /home/loukas/Pictures/wallpapers/Purple_waves.jpg
