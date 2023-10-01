@@ -17,7 +17,7 @@ if [[ $STATUS == "connected" ]]; then
 	else
 		echo $SSID
 		echo
-		echo \#00CD00
+		echo \#00FF00
 	fi
 elif [[ $STATUS == "unavailable" ]]; then
 	echo "Wifi: down"
