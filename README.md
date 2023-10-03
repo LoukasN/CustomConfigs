@@ -26,4 +26,5 @@ bash install.sh
   <li>lxdm</li>
   <li>packer (from github)</li>
   <li>ripgrep (for nvim plugin telescope)</li>
+  <li>ifstat (for network traffic in i3blocks)</li>
 </ul>
