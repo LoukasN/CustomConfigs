@@ -32,3 +32,8 @@ vim.g.mapleader = " "
 
 --Copying into the system clipboard
 vim.api.nvim_set_option("clipboard","unnamed")
+
+--Tab has size of 4
+vim.o.tabstop=4
+vim.o.shiftwidth=4
+vim.o.smartindent=true

@@ -19,9 +19,11 @@ return require('packer').startup(function(use)
   use('tpope/vim-Fugitive')
   use('mhinz/vim-startify')
   use('sudormrfbin/cheatsheet.nvim')
-  use{ "catppuccin/nvim", as = 'catppuccin' }
   use('ThePrimeagen/vim-be-good')
   use('ThePrimeagen/harpoon')
+
+  use{ "catppuccin/nvim", as = 'catppuccin' }
+  use ("EdenEast/nightfox.nvim")
 
   use {
   'VonHeikemen/lsp-zero.nvim',
