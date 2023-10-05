@@ -14,7 +14,7 @@ cd CustomConfigs/CustomScripts/
 bash install.sh
 ```
 
-## Dependancies
+## Dependancies and quality of life
 <ul>
   <li>kitty</li>
   <li>i3</li>
@@ -23,7 +23,7 @@ bash install.sh
   <li>feh</li>
   <li>picom</li>
   <li>neovim</li>
-  <li>lxdm</li>
+  <li>ly</li>
   <li>packer (from github)</li>
   <li>ripgrep (for nvim plugin telescope)</li>
   <li>btop</li>
