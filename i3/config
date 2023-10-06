@@ -268,4 +268,4 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer
 # This 3 lines are written by the script (uses feh) located in ~/.config/rofi/rofi-wallpaper-changer
 # Changing wallpaper using feh
-exec_always --no-startup-id sleep 1 && feh --bg-fill /home/loukas/Pictures/wallpapers/Dark_forest.jpg /home/loukas/Pictures/wallpapers/frong.png
+exec_always --no-startup-id sleep 1 && feh --bg-fill /home/loukas/Pictures/wallpapers/Night_desert.png /home/loukas/Pictures/wallpapers/
