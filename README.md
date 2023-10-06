@@ -22,6 +22,7 @@ bash install.sh
   <li>btop</li>
   <li>dunst</li>
   <li>zsh</li>
+  <li>tlp (for laptop only)</li>
 </ul>
 
 ## If using i3
