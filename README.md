@@ -31,8 +31,8 @@ bash install.sh
   <li>picom</li>
   <li>feh</li>  
 </ul>
-## If using sway
 
+## If using sway
 <ul>
   <li>sway</li>
   <li>slurp</li>
