@@ -19,22 +19,22 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu rofi -show drun | xargs swaymsg exec --
-# Locker for screen
-set $lock 'swaylock -f'
-bindswitch --reload --locked lid:on exec $lock
+# The lock screen to use
+set $lock 'swaylock -f -e -c 000000 --font HackNerdFont --indicator-radius 65 --indicatory-thickness 7'
 
+# System mode is a power menu
 set $mode_system Press (l) Lock, (e) Logout, (s) Suspend, (r) Reboot, (S) Shutdown, (R) UEFI
 mode "$mode_system" {
-    bindsym l exec $lock, mode "default"
-    bindsym e exit
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-    bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
+	bindsym l exec $lock, mode "default"
+		bindsym e exit
+		bindsym s exec --no-startup-id systemctl suspend, mode "default"
+		bindsym r exec --no-startup-id systemctl reboot, mode "default"
+		bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+		bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
 
-    # return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# return to default mode
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
 }
 bindsym $mod+Shift+Delete mode "$mode_system"
 
@@ -52,11 +52,11 @@ set $secondary HDMI-A-1
 #
 # Example configuration:
 #
-exec swayidle \
-timeout 300 'exec $lock' \
-timeout 600 'swaymsg "output * dpms off"' \
-after-resume 'swaymsg "output * dpms on"' \
-before-sleep 'exec $lock'
+exec swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 600 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"' \
+	before-sleep '$lock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -120,13 +120,15 @@ bindsym $mod+i exec bash ~/.config/rofi/rofi-wifi-menu.sh
 bindsym $mod+b exec bash ~/.config/rofi/rofi-bluetooth-menu.sh
 # Custom script for changing the wallpaper with rofi
 bindsym $mod+w exec bash ~/.config/rofi/rofi-wallpaper-changer-sway.sh
-#
 
 # Screenshot using grim and slurp
 set $screenshot grim ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-%H-%M-%S").png
-bindsym --release Print exec $screenshot && notify-send 'Screenshot taken'
+bindsym --release Print exec $screenshot && notify-send 'Screenshot captured'
 set $screenshot slurp | grim -g - ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-%H-%M-%S").png
 bindsym --release Shift+Print exec $screenshot && notify-send 'Screenshot captured'
+
+# Locking the screen when the lid closes
+bindswitch --reload --locked lid:on exec $lock
 
 #
 # Moving around:
@@ -220,9 +222,9 @@ bindsym $mod+Left resize shrink width 10px
 bindsym $mod+Down resize grow height 10px
 bindsym $mod+Up resize shrink height 10px
 bindsym $mod+Right resize grow width 10px
-#
 
-# Window appearance
+#
+# Window appearance:
 #
 #   Window title        border  bground text    indicator child_border
 client.focused          #FFFFFF #51A2DA #FFFFFF #FFFFFF   #FFFFFF
@@ -242,21 +244,20 @@ focus_follows_mouse no
 
 # set floating per app
 for_window [class="steam"] floating enabled
-for_window [class="kitty qalc"] floating enabled
-#
+for_window [class="Gimp-2.10"] floating enabled
 
 # Set opacity
 set $opacity 0.85
 for_window [class="kitty"] opacity $opacity
+for_window [app_id="i3blocks"] opacity $opacity
 
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-
-
 bar {
 	position top
-		font pango:HackerNerdFont 10
+	font pango:HackerNerdFont 10
 		colors {
 			status_command i3blocks -c ~/.config/sway/i3blocks.conf
 				statusline #FFFFFF
@@ -270,4 +271,5 @@ bar {
 				binding_mode       #2A2A2A #646464 #FFFFFF
 		}
 }
+
 include /etc/sway/config.d/*
