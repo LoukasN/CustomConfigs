@@ -18,7 +18,7 @@ bash install.sh
   <li>rofi-wayland (also works in X11)</li>
   <li>neovim</li>
   <li>ly</li>
-  <li>packer (from github) (discontinued)</li>
+  <li>packer (from github) (abandoned)</li>
   <li>btop</li>
   <li>dunst</li>
   <li>zsh</li>
