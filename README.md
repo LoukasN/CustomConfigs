@@ -23,12 +23,12 @@ bash install.sh
   <li>dunst</li>
   <li>zsh</li>
   <li>tlp (for laptop only)</li>
+  <li>i3blocks</li>
 </ul>
 
 ## If using i3
 <ul>  
   <li>i3</li>
-  <li>i3blocks</li>
   <li>picom</li>
   <li>feh</li>  
 </ul>
