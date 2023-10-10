@@ -10,7 +10,7 @@ cd CustomConfigs/CustomScripts/
 bash install.sh
 ```
 
-## Dependancies and quality of life
+# Dependancies and quality of life
 
 ## Global
 <ul>
