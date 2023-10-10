@@ -28,7 +28,7 @@ selectpic(){
     if [[ $wallpaper == "q" || $wallpaper == "" ]]; then
         killall feh && exit 
     else
-	SetWallpaper
+		SetWallpaper
     fi
 }
 
