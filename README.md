@@ -24,6 +24,7 @@ bash install.sh
   <li>zsh</li>
   <li>tlp (for laptop only)</li>
   <li>i3blocks</li>
+  <li>Flat-remix (theme)</li>
 </ul>
 
 ## If using i3
