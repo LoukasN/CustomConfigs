@@ -1,7 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
@@ -119,7 +115,7 @@ set $screenshot slurp | grim -g - ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-
 bindsym --release Shift+Print exec $screenshot && notify-send 'Screenshot captured'
 
 # Locking the screen when the lid closes
-bindswitch --reload --locked lid:on exec '$lock && systemctl suspend'
+bindswitch --reload --locked lid:on exec swayidle -w 'systemctl suspend' before-sleep 'exec $lock'
 
 #
 # Moving around:
@@ -227,7 +223,7 @@ client.unfocused        #4C4C4C #222222 #888888 #292D2E   #4C4C4C
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
 
 # Border and gaps
-gaps inner 3
+gaps inner 5
 default_border pixel 1
 smart_borders on
 smart_gaps on
@@ -244,6 +240,16 @@ for_window [class="Gimp-2.10"] floating enabled
 set $opacity 0.85
 for_window [class="kitty"] opacity $opacity
 for_window [app_id="i3blocks"] opacity $opacity
+
+# Gtk theme changes
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Flat-Remix-GTK-Grey-Darkest'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema font-name 'HackNerdFont'
+}
 
 #
 # Status Bar:
@@ -269,4 +275,4 @@ bar {
 include /etc/sway/config.d/*
 # This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway
 output eDP-1 bg /home/loukas/Pictures/wallpapers/Dark_planet.jpg fill
-output HDMI-A-1 bg /home/loukas/Pictures/wallpapers/Radio_mountains.png fill
+output HDMI-A-1 bg /home/loukas/Pictures/wallpapers/Colored_planet.png fill
