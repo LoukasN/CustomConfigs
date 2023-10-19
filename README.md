@@ -15,6 +15,7 @@ bash install.sh
 ## Global
 <ul>
   <li>kitty</li>
+  <li>thunar</li>
   <li>rofi (The wayland compatible version)</li>
   <li>neovim</li>
   <li>ly (github)</li>
