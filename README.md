@@ -1,17 +1,3 @@
-# CustomConfigs
-
-## How to use
-
-# **WIP
-
-```bash
-git clone https://github.com/LoukasN/CustomConfigs
-cd CustomConfigs/CustomScripts/
-bash install.sh
-```
-
-# Dependancies and quality of life
-
 ## Global
 <ul>
   <li>kitty</li>
