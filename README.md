@@ -12,6 +12,7 @@
   <li>tlp</li>
   <li>i3blocks</li>
   <li>Flat-remix (theme)</li>
+<li>Papirus-icon-theme</li>
 </ul>
 
 ## If using i3
