@@ -15,14 +15,14 @@ bash install.sh
 ## Global
 <ul>
   <li>kitty</li>
-  <li>rofi-wayland (also works in X11)</li>
+  <li>rofi (The wayland compatible version)</li>
   <li>neovim</li>
   <li>ly</li>
   <li>packer (from github) (abandoned)</li>
   <li>btop</li>
   <li>dunst</li>
   <li>zsh</li>
-  <li>tlp (for laptop only)</li>
+  <li>tlp</li>
   <li>i3blocks</li>
   <li>Flat-remix (theme)</li>
 </ul>
