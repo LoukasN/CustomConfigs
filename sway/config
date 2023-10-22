@@ -36,7 +36,7 @@ bindsym $mod+Shift+Delete mode "$mode_system"
 
 ### Output configuration
 #
-# Wallpaper is in the end of the file because it changes using a rofi script
+# Wallpapers are in the end of the file because it changes using a rofi script
 output eDP-1 resolution 1920x1080@60Hz position 1920,0
 output HDMI-A-1 resolution 1920x1080@75Hz
 set $primary eDP-1
@@ -44,20 +44,13 @@ set $secondary HDMI-A-1
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
-#exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-#exec swayidle 
-# Lock & Hibernate
-exec swayidle -w \
-  timeout 300 'light -O; light -S 5' \
-    resume 'light -I' \
-  timeout 500 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-  timeout 600 'systemctl suspend' \
-  before-sleep 'exec $lock'
+exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+exec swayidle 
 
-bindswitch --reload --locked lid:on exec $lidclose-w timeout 600 'systemctl suspend' before-sleep 'exec $lock'
+# Lock when lid closes
+bindswitch --reload --locked lid:on exec $lock
+
 #
-
 ### Input configuration
 #
 input type:touchpad {
@@ -96,7 +89,7 @@ bindsym $mod+d exec $menu
 # mouse button for dragging.
 floating_modifier $mod normal
 
-# Reload the configuration file%
+# Reload the configuration file
 bindsym $mod+Shift+r reload
 
 # Brightness and Volume
@@ -170,8 +163,8 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 # Moving workspaces between monitors
-bindsym $mod+m move workspace to output $primary
-bindsym $mod+Shift+m move workspace to output $secondary
+bindsym $mod+Shift+Left move workspace to output $primary
+bindsym $mod+Shift+Right move workspace to output $secondary
 
 # locking workspace to a screen
 workspace 1 output $primary
@@ -214,15 +207,15 @@ bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
 #
-bindsym $mod+Left resize shrink width 10px
-bindsym $mod+Down resize grow height 10px
-bindsym $mod+Up resize shrink height 10px
-bindsym $mod+Right resize grow width 10px
+bindsym $mod+Left resize shrink width 20px
+bindsym $mod+Down resize grow height 20px
+bindsym $mod+Up resize shrink height 20px
+bindsym $mod+Right resize grow width 20px
 
 #
 # Window appearance:
 #
-#   Window title        border  bground text    indicator child_border
+#Window title           border  bground text    indicator child_border
 client.focused          #FFFFFF #878787 #FFFFFF #FFFFFF   #FFFFFF
 client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #8C8C8C   #8C8C8C
 client.unfocused        #4C4C4C #222222 #888888 #292D2E   #4C4C4C
@@ -230,6 +223,7 @@ client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
 
 # Border and gaps
 gaps inner 5
+gaps outer 5
 default_border pixel 1
 smart_borders on
 smart_gaps on
@@ -237,15 +231,6 @@ hide_edge_borders smart
 
 # Focus does not follow mouse 
 focus_follows_mouse no
-
-# set floating per app
-for_window [class="steam"] floating enabled
-for_window [class="Gimp-2.10"] floating enabled
-
-# Set opacity
-set $opacity 0.85
-for_window [class="kitty"] opacity $opacity
-for_window [app_id="i3blocks"] opacity $opacity
 
 # Gtk theme changes
 set $gnome-schema org.gnome.desktop.interface
@@ -260,12 +245,24 @@ exec_always {
 }
 
 #
+# Floating settings
+#
+
+# Set global floating rules
+for_window [floating] resize set 1000 1000 ; move position center
+
+# Set floating per app
+for_window [class="steam"] floating enabled
+for_window [class="Gimp-2.10"] floating enabled
+#
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
 	position top
-	font pango:HackerNerdFont 10
+	font pango:HackNerdFont 10
 	colors {
 		status_command i3blocks -c ~/.config/sway/i3blocks.conf
 		statusline #FFFFFF
@@ -279,8 +276,8 @@ bar {
 		binding_mode       #2A2A2A #646464 #FFFFFF
 	}
 }
+#
 
 include /etc/sway/config.d/*
 # This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway
 output eDP-1 bg /home/loukas/Pictures/wallpapers/Colored_planet.png fill
-output HDMI-A-1 bg /home/loukas/Pictures/wallpapers/wave.png fill

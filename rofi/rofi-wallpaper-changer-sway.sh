@@ -8,7 +8,7 @@ input=$(cat $ConfigFile | grep "fill") # Get previous wallpapers lines from file
 PreviousPrimary=$(echo -e $input | grep $primaryMonitor | awk -F ' ' '{print $4}' | cut -d '/' -f 6) # Get previous primary wallpapers name
 PreviousSecondary=$(echo -e $input | grep $secondaryMonitor | awk -F ' ' '{print $9}' | cut -d '/' -f 6) # Get previous secondary wallpapers name
 if [ $primaryMonitor != $secondaryMonitor ]; then
-	TwoMonitors='1'
+	TwoMonitors=true
 fi
 
 SelectPic(){
@@ -38,8 +38,11 @@ selectmonitor(){
 }
 
 SetWallpaper(){
-	if [ TwoMonitors ]; then
+	if [ $TwoMonitors ]; then
 		selectmonitor
+	else
+		PrimaryWallpaper=$wallpaper
+		SecondaryWallpaper=$PreviousPrimary
 	fi
 	# Delete previous entries
 	sed -i '/wallpapers/d' $ConfigFile
@@ -47,7 +50,7 @@ SetWallpaper(){
 	# Write new entries
 	echo -e "# This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway" >> $ConfigFile
 	echo "output $primaryMonitor bg $dir$PrimaryWallpaper $mode" >> $ConfigFile
-	if [ !TwoMonitors ]; then
+	if [ $TwoMonitors ]; then
 		echo "output $secondaryMonitor bg $dir$SecondaryWallpaper $mode" >> $ConfigFile
 	fi
 	# Reload sway
