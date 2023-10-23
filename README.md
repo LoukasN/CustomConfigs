@@ -5,7 +5,7 @@
   <li>rofi (The wayland compatible version)</li>
   <li>neovim</li>
   <li>ly (github)</li>
-  <li>~~packer (github) (abandoned)~~ (Replaced with lazy)</li> 
+  <li>~~packer (github) (abandoned)~~</li> 
   <li>btop</li>
   <li>dunst</li>
   <li>zsh</li>
