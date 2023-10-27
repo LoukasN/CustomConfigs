@@ -27,3 +27,9 @@
   <li>sway</li>
   <li>slurp</li>
 </ul>
+
+## If using Hyprland
+<ul>
+  <li>hyprland</li>
+  <li>gbar</li>
+</ul>
