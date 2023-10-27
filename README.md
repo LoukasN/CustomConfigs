@@ -31,5 +31,5 @@
 ## If using Hyprland
 <ul>
   <li>hyprland</li>
-  <li>gbar</li>
+  <li>eww</li>
 </ul>
