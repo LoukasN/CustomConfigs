@@ -6,4 +6,3 @@ Time=$(date +%T)
 Date=$(date +"%d/%m/%Y")
 
 echo "$Date $Time"
-

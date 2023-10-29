@@ -93,8 +93,9 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # Brightness and Volume
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && $refresh_bar
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1-% && $refresh_bar
+set $refresh_bar_sound pkill -RTMIN+13 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && $refresh_bar_sound
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1-% && $refresh_bar_sound
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_bar pkill -SIGRTMIN+10 i3blocks
@@ -235,7 +236,7 @@ focus_follows_mouse no
 # Gtk theme changes
 set $gnome-schema org.gnome.desktop.interface
 
-exec_always {
+exec {
     gsettings set $gnome-schema gtk-theme 'Flat-Remix-GTK-Grey-Darkest'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
@@ -280,4 +281,4 @@ bar {
 
 include /etc/sway/config.d/*
 # This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway
-output eDP-1 bg /home/loukas/Pictures/wallpapers/Colored_planet.png fill
+output eDP-1 bg /home/loukas/Pictures/wallpapers/Dead_cat.jpg fill
