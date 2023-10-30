@@ -13,9 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	'nvim-telescope/telescope.nvim', tag = '0.1.2',
-	{
-		dependencies = { {'nvim-lua/plenary.nvim'} },
-	},
+	('nvim-lua/plenary.nvim'),
 	('nvim-treesitter/nvim-treesitter'),
 	('nvim-treesitter/playground'),
 	('mbbill/undotree'),
