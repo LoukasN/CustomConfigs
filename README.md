@@ -28,8 +28,7 @@
   <li>slurp</li>
 </ul>
 
-# WIP
-## If using Hyprland
+## If using Hyprland (WIP)
 <ul>
   <li>hyprland</li>
   <li>waybar</li>
