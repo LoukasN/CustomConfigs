@@ -111,6 +111,10 @@ bindsym $mod+b exec bash ~/.config/rofi/rofi-bluetooth-menu.sh
 # Custom script for changing the wallpaper with rofi
 bindsym $mod+w exec bash ~/.config/rofi/rofi-wallpaper-changer-sway.sh
 
+# Running the VM
+bindsym $mod+Shift+w exec ~/WindowsVM/cli-vm.sh
+for_window [app_id="virt-manager"] move to workspace 10
+
 # Screenshot using grim and slurp
 set $screenshot grim ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-%H-%M-%S").png
 bindsym --release Print exec $screenshot && notify-send 'Screenshot captured'
@@ -281,4 +285,4 @@ bar {
 
 include /etc/sway/config.d/*
 # This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway
-output eDP-1 bg /home/loukas/Pictures/wallpapers/Dead_cat.jpg fill
+output eDP-1 bg /home/loukas/Pictures/wallpapers/Dark_planet.jpg fill

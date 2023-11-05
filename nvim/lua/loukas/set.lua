@@ -20,7 +20,8 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 --Visible lines before scrolling
-vim.opt.scrolloff = 16
+vim.opt.scrolloff = 12
+
 --No sidebars
 vim.opt.signcolumn = "no"
 
