@@ -31,10 +31,22 @@ vim.opt.updatetime = 50
 --leader key
 vim.g.mapleader = " "
 
---Copying into the system clipboard
-vim.api.nvim_set_option("clipboard","unnamed")
-
 --Tab has size of 4
 vim.o.tabstop=4
 vim.o.shiftwidth=4
 vim.o.smartindent=true
+
+--Use system clipboard
+vim.o.clipboard = 'unnamedplus'
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})

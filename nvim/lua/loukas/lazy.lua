@@ -37,9 +37,8 @@ local plugins = {
 			{'hrsh7th/cmp-nvim-lsp'}, -- Required
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
-	}
+	},
 }
 
-local opts = {}
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins)
