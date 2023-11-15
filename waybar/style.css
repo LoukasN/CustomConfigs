@@ -34,6 +34,7 @@
 #mode,
 #network,
 #pulseaudio,
+#brightness,
 #tray {
     padding-left: 4px;
     padding-right: 4px;
@@ -93,6 +94,10 @@
 
 #pulseaudio.muted {
     color: yellow;
+}
+
+#brightness {
+    /* No styles */
 }
 
 #tray {

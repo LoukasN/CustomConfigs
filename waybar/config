@@ -20,7 +20,6 @@
 
     "modules-left": [
         "sway/workspaces",
-        "sway/mode",
 		"hyprland/workspaces",
     ],
     "modules-center": [
@@ -28,6 +27,7 @@
 		"hyprland/window"
     ],
     "modules-right": [
+		"backlight",
 		"pulseaudio",
         "network",
         "battery",
@@ -81,11 +81,6 @@
         "tooltip-format": "{ifname}: {ipaddr} |"
     },
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
-        "tooltip": false
-    },
-
     "sway/window": {
         "format": "{}",
         "max-length": 120
@@ -111,6 +106,11 @@
 	        "default": ["", ""]
 	    },
 	    "on-click": "pavucontrol"
+	},
+
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{percent}% |",
 	},
 
 	"tray": {
