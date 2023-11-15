@@ -10,9 +10,9 @@
   <li>zsh</li>
   <li>powerlevel10k (github) (for zsh)</li>
   <li>tlp</li>
-  <li>i3blocks</li>
+  <li>i3blocks / waybar (waybar for hyprland)</li>
   <li>Flat-remix (theme)</li>
-<li>Papirus-icon-theme</li>
+  <li>Papirus-icon-theme</li>
 </ul>
 
 ## If using i3
@@ -32,4 +32,7 @@
 <ul>
   <li>hyprland</li>
   <li>waybar</li>
+  <li>swaybg</li>
+  <li>grim</li>
+  <li>slurp</li>
 </ul>
