@@ -92,7 +92,7 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+r reload
 
-# Brightness and Volume
+# Brightness
 set $refresh_bar_sound pkill -RTMIN+13 i3blocks
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && $refresh_bar_sound
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1-% && $refresh_bar_sound
@@ -285,5 +285,4 @@ bar {
 
 include /etc/sway/config.d/*
 # This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway
-output eDP-1 bg /home/loukas/Pictures/wallpapers/Dark_planet.jpg fill
-output HDMI-A-1 bg /home/loukas/Pictures/wallpapers/Colored_planet.png fill
+output eDP-1 bg /home/loukas/Pictures/wallpapers/Colored_planet.png fill

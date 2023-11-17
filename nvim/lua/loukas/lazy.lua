@@ -25,6 +25,14 @@ local plugins = {
 	{ "catppuccin/nvim", name = 'catppuccin', priority = 1000 },
 	("EdenEast/nightfox.nvim"),
 	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+	},
+	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
 		dependencies = {

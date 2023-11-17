@@ -1,0 +1,23 @@
+#!/bin/bash
+
+WallpaperDir="/home/$USER/Pictures/wallpapers/" # Wallpaper dir
+ConfigLocation="/home/$USER/.config/hypr/test.conf" # The config file to edit
+mode="fill" # Scaling mode
+echo PreviousWallpaper=$(cat $ConfigLocation | grep "swaybg" | awk -F '/' '{print $4}' | awk -F '.' '{print $1}') # Get previous wallpapers lines from file)
+
+SelectPic(){
+	# Shows the wallpaper selection menu in rofi
+	Wallpaper=$(ls $WallpaperDir | rofi -dmenu -p "Select wallpaper")
+	if [[ $Wallpaper == "q" || $wallpaper == "" ]]; then
+		exit
+	else
+		SetWallpaper
+	fi
+}
+
+SetWallpaper(){
+	#sed -i 's/$PrevWallpaper/$WallpaperDir' ConfigLocation
+	echo PreviousWallpaper
+}
+
+SelectPic
