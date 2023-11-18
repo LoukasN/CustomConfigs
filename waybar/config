@@ -23,8 +23,8 @@
 		"hyprland/workspaces",
     ],
     "modules-center": [
+		"hyprland/window",
         "sway/window",
-		"hyprland/window"
     ],
     "modules-right": [
 		"backlight",
@@ -76,8 +76,8 @@
     "network": {
         "interval": 5,
         "format-wifi": "|   {essid} ({signalStrength}%) |", // Icon: wifi
-        "format-ethernet": "| {ifname}: {ipaddr}/{cidr} |", // Icon: ethernet
-        "format-disconnected": "⚠ | Disconnected |",
+        "format-ethernet": "| 󰈀  {ifname}: {ipaddr}/{cidr} |", // Icon: ethernet
+        "format-disconnected": "| ⚠  Disconnected |",
         "tooltip-format": "{ifname}: {ipaddr} |"
     },
 
@@ -111,6 +111,7 @@
 	"backlight": {
 		"device": "intel_backlight",
 		"format": "{percent}% |",
+		"tooltip": false,
 	},
 
 	"tray": {
