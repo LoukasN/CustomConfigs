@@ -6,7 +6,7 @@ export EDITOR=nvim
 
 # Aliases
 alias c="clear"
-alias vim="nvim"
+alias nv="nvim"
 alias ls="ls --color=auto"
 alias ll="ls -lav --ignore=.."
 alias :q="exit"
