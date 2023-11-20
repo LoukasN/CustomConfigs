@@ -1,4 +1,4 @@
---leader key
+-- header key
 vim.g.mapleader = " "
 --open file search
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = "File search"})
