@@ -13,6 +13,7 @@
   <li>i3blocks / waybar (waybar for hyprland)</li>
   <li>Flat-remix (theme)</li>
   <li>Papirus-icon-theme</li>
+  <li>qt5ct (for qt app theming)</li>
 </ul>
 
 ## If using i3
