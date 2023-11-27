@@ -20,3 +20,4 @@ SetWallpaper(){
 }
 
 SelectPic
+exit

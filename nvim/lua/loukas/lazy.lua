@@ -20,7 +20,6 @@ local plugins = {
 	('tpope/vim-Fugitive'),
 	('mhinz/vim-startify'),
 	('sudormrfbin/cheatsheet.nvim'),
-	('ThePrimeagen/vim-be-good'),
 	('ThePrimeagen/harpoon'),
 	{ "catppuccin/nvim", name = 'catppuccin', priority = 1000 },
 	("EdenEast/nightfox.nvim"),
@@ -47,6 +46,8 @@ local plugins = {
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	},
+	-- For university assingmets
+	('lervag/vimtex'),
 }
 
 

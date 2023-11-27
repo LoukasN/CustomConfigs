@@ -1,30 +1,35 @@
 #!/bin/bash
  
 shutdown=" Poweroff"
-reboot=" Reboot"
+restart=" Restart"
 logout="󰍃 Logout"
 sleep="󰤄 Suspend"
 lock=" Lock"
  
 selected_option=$(echo "$shutdown
-$reboot
+$restart
 $logout
 $sleep
 $lock" | rofi -dmenu -i -p "Powermenu" -theme "~/.config/rofi/Casual-Dark-PowerMenu.rasi")
 
-if [ "$selected_option" == "$lock" || "$selected_option" == "l"]
+if [ "$selected_option" == "$lock" ]
 then
   swaylock -f -e -c 000000 --font HackNerdFont --indicator-radius 65 --indicator-thickness 7
+  exit
 elif [ "$selected_option" == "$logout" ]
 then
-  loginctl terminate-user `whoami`
+  hyprctl dispatch exit 1
+  exit
 elif [ "$selected_option" == "$shutdown" ]
 then
   systemctl poweroff
-elif [ "$selected_option" == "$reboot" ]
+  exit
+elif [ "$selected_option" == "$restart" ]
 then
-  systemctl reboot
+  systemctl restart
+  exit
 elif [ "$selected_option" == "$sleep" ]
 then
   systemctl suspend
+  exit
 fi
