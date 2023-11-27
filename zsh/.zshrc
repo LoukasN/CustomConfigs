@@ -27,11 +27,10 @@ source ~/.config/zsh/zsh-functions
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "wting/autojump"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/GitApps/powerlevel10k/powerlevel10k.zsh-theme
 
 # Jump
 [[ -s /home/loukas/.autojump/etc/profile.d/autojump.sh ]] && source /home/loukas/.autojump/etc/profile.d/autojump.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
