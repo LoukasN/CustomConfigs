@@ -36,12 +36,22 @@ vim.o.tabstop=4
 vim.o.shiftwidth=4
 vim.o.smartindent=true
 
+---------- From nvim-lua/kickstart.nvim ----------
+
 --Use system clipboard
 vim.o.clipboard = 'unnamedplus'
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- True colors
+vim.o.termguicolors = true
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Better highlighting when copying text
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()

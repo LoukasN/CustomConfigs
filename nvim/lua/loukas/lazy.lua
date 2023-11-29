@@ -12,18 +12,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	'nvim-telescope/telescope.nvim', tag = '0.1.2',
-	('nvim-lua/plenary.nvim'),
-	('nvim-treesitter/nvim-treesitter'),
-	('nvim-treesitter/playground'),
-	('mbbill/undotree'),
-	('tpope/vim-Fugitive'),
-	('mhinz/vim-startify'),
-	('sudormrfbin/cheatsheet.nvim'),
-	('ThePrimeagen/harpoon'),
-	{ "catppuccin/nvim", name = 'catppuccin', priority = 1000 },
-	("EdenEast/nightfox.nvim"),
-	('nvim-lualine/lualine.nvim'),
+	{
+		'nvim-telescope/telescope.nvim', version = '0.1.4',
+		dependencies = {
+			('nvim-lua/plenary.nvim')
+		}
+	},
+	'nvim-treesitter/nvim-treesitter',
+	'nvim-treesitter/playground',
+	'mhinz/vim-startify',
+	'nvim-lualine/lualine.nvim',
+	{'tpope/vim-Fugitive', event = "VeryLazy"},
+	{'mbbill/undotree', event = "VeryLazy"},
+	{'sudormrfbin/cheatsheet.nvim', event = "VeryLazy"},
+	{'ThePrimeagen/harpoon', event = "VeryLazy"},
+	{"catppuccin/nvim", name = 'catppuccin', priority = 1000},
+	{"EdenEast/nightfox.nvim", priority = 1001},
+	{"folke/tokyonight.nvim", priority = 1000},
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -47,7 +52,7 @@ local plugins = {
 		}
 	},
 	-- For university assingmets
-	('lervag/vimtex'),
+	{'lervag/vimtex', event = "VeryLazy"},
 }
 
 
