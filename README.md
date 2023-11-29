@@ -10,10 +10,11 @@
   <li>zsh</li>
   <li>powerlevel10k (github) (for zsh)</li>
   <li>tlp</li>
-  <li>i3blocks / waybar (waybar for hyprland)</li>
+  <li>i3blocks / waybar</li>
   <li>Flat-remix (theme)</li>
   <li>Papirus-icon-theme</li>
   <li>qt5ct (for qt app theming)</li>
+  <li>zathura (for pdf viewing with latex)</li>
 </ul>
 
 ## If using i3
