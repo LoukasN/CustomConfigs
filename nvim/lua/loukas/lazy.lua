@@ -30,6 +30,13 @@ local plugins = {
 	{"EdenEast/nightfox.nvim", priority = 1001},
 	{"folke/tokyonight.nvim", priority = 1000},
 	{
+		'numToStr/Comment.nvim',
+		opts = {
+			-- add any options here
+		},
+		lazy = false,
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		init = function()

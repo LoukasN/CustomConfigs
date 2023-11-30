@@ -34,6 +34,7 @@
 #mode,
 #network,
 #pulseaudio,
+#powerprofile,
 #tray {
     padding-left: 4px;
     padding-right: 4px;
@@ -118,4 +119,8 @@
 #workspaces button.urgent {
     border-color: #EC69A0;
     color: #c9545d;
+}
+
+#powerprofile {
+    /* No styles */
 }
