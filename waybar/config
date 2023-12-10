@@ -81,7 +81,7 @@
       "tooltip-format": "{:%e %B %Y}"
     },
 
-    "network": {
+     "network": {
         "interval": 5,
         "format-wifi": "|   {essid} ({signalStrength}%) |", // Icon: wifi
         "format-ethernet": "| 󰈀  {ifname}|", // Icon: ethernet

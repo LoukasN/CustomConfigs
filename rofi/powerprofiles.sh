@@ -2,9 +2,9 @@
 
 CurrentProfile=$(powerprofilesctl get)
 SelectedProfile=$CurrentProfile
-Performance="Performance"
-Balanced="Balanced"
-BatterySaving="Power-Saver"
+Performance="󰓅 Performance"
+Balanced="󰗑 Balanced"
+BatterySaving=" Power-Saver"
 
 SelectedProfile=$(echo "$Performance
 $Balanced

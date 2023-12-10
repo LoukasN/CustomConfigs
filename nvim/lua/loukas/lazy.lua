@@ -13,12 +13,21 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	{
-		'nvim-telescope/telescope.nvim', version = '0.1.4',
+		'nvim-telescope/telescope.nvim', version = '0.1.x',
 		dependencies = {
 			('nvim-lua/plenary.nvim')
 		}
 	},
 	'nvim-treesitter/nvim-treesitter',
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 	'nvim-treesitter/playground',
 	'mhinz/vim-startify',
 	'nvim-lualine/lualine.nvim',
@@ -27,7 +36,7 @@ local plugins = {
 	{'sudormrfbin/cheatsheet.nvim', event = "VeryLazy"},
 	{'ThePrimeagen/harpoon', event = "VeryLazy"},
 	{"catppuccin/nvim", name = 'catppuccin', priority = 1000},
-	{"EdenEast/nightfox.nvim", priority = 1001},
+	{"EdenEast/nightfox.nvim", priority = 1000},
 	{"folke/tokyonight.nvim", priority = 1000},
 	{
 		'numToStr/Comment.nvim',
@@ -58,7 +67,7 @@ local plugins = {
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	},
-	-- For university assingmets
+	-- latex plugin for neovim
 	{'lervag/vimtex', event = "VeryLazy"},
 }
 

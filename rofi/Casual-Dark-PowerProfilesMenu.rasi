@@ -15,7 +15,7 @@ window {
     border:           0;
     padding:          10;
     transparency:     "real";
-    width:            138px;
+    width:            150px;
     location:         northeast;
 }
 
