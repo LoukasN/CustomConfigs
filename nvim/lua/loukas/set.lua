@@ -32,9 +32,9 @@ vim.opt.updatetime = 50
 vim.g.mapleader = " "
 
 --Tab has size of 4
-vim.o.tabstop=4
-vim.o.shiftwidth=4
-vim.o.smartindent=true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.smartindent = true
 
 ---------- From nvim-lua/kickstart.nvim ----------
 

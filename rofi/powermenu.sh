@@ -22,11 +22,11 @@ then
   exit
 elif [ "$selected_option" == "$shutdown" ]
 then
-  systemctl poweroff
+  shutdown -ah now
   exit
 elif [ "$selected_option" == "$restart" ]
 then
-  systemctl restart
+  shutdown -ar now
   exit
 elif [ "$selected_option" == "$sleep" ]
 then

@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	{
-		'nvim-telescope/telescope.nvim', version = '0.1.x',
+		'nvim-telescope/telescope.nvim',
 		dependencies = {
 			('nvim-lua/plenary.nvim')
 		}
@@ -38,12 +38,7 @@ local plugins = {
 	{"catppuccin/nvim", name = 'catppuccin', priority = 1000},
 	{"EdenEast/nightfox.nvim", priority = 1000},
 	{"folke/tokyonight.nvim", priority = 1000},
-	{
-		'numToStr/Comment.nvim',
-		opts = {
-			-- add any options here
-		},
-		lazy = false,
+	{'numToStr/Comment.nvim', lazy = false,
 	},
 	{
 		"folke/which-key.nvim",
@@ -67,7 +62,7 @@ local plugins = {
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	},
-	-- latex plugin for neovim
+	-- latex plugin
 	{'lervag/vimtex', event = "VeryLazy"},
 }
 
