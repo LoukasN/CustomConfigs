@@ -36,6 +36,9 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.smartindent = true
 
+--Vim movement in greek language
+vim.o.langmap = "ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz"
+
 ---------- From nvim-lua/kickstart.nvim ----------
 
 --Use system clipboard

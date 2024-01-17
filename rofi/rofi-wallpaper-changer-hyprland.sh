@@ -11,6 +11,7 @@ SelectPic(){
 	if [[ $Wallpaper == "q" || $Wallpaper == "" ]]; then
 		exit
 	else
+		pkill swaybg
 		SetWallpaper
 	fi
 }
