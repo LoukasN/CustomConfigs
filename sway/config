@@ -1,7 +1,7 @@
 # Read `man 5 sway` for a complete reference.
 
 # Autostart
-exec waybar
+#exec waybar
 
 ### Variables
 #
@@ -238,7 +238,7 @@ smart_gaps on
 hide_edge_borders smart
 
 # Focus does not follow mouse 
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # Gtk theme changes
 set $gnome-schema org.gnome.desktop.interface
@@ -269,6 +269,7 @@ for_window [class="Gimp-2.10"] floating enabled
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+	swaybar_command waybar
 	position top
 	font pango:HackNerdFont 10
 	colors {
