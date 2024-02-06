@@ -28,7 +28,8 @@
     ],
     "modules-right": [
 		"backlight",
-		"pulseaudio",
+		"pulseaudio#output",
+		"pulseaudio#input",
         "network",
         "battery",
 		"custom/powerprofile",
@@ -99,11 +100,11 @@
         "max-length": 120
     },
 
-	"pulseaudio": {
-	    //"scroll-step": 1,
-	    "format": "{icon}  {volume}%",
-	    "format-bluetooth": "{icon}  {volume}% ",
-	    "format-muted": " ({volume}%)",
+	"pulseaudio#output": {
+	    "scroll-step": 1,
+	    "format": " {icon} {volume}% ",
+	    "format-bluetooth": " {icon} {volume}%  ",
+	    "format-muted": "  ({volume}%) ",
 	    "format-icons": {
 	        "headphones": "",
 	        "handsfree": "",
@@ -113,6 +114,19 @@
 	        "car": "",
 	        "default": ["", ""]
 	    },
+		"smooth-scrolling-threshold": 1,
+		"max-volume": 100,
+	    "on-click": "pavucontrol"
+	},  
+
+	"pulseaudio#input": {
+		"scroll-step": 1,
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": " ({volume}%)",
+	    "on-click": "pavucontrol",
+		"smooth-scrolling-threshold": 1,
+		"max-volume": 100,
 	    "on-click": "pavucontrol"
 	},
 

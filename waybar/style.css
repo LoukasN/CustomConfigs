@@ -92,7 +92,11 @@
     /* No styles */
 }
 
-#pulseaudio.muted {
+#pulseaudio.output.muted {
+    color: yellow;
+}
+
+#pulseaudio.input.source-muted {
     color: yellow;
 }
 
