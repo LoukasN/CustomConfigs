@@ -10,8 +10,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
-# Vim keybinds
-bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/loukas/.zshrc'
@@ -26,6 +24,7 @@ source ~/.config/zsh/zsh-functions
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "jeffreytse/zsh-vi-mode"
 zsh_add_plugin "wting/autojump"
 source ~/GitApps/powerlevel10k/powerlevel10k.zsh-theme
 
