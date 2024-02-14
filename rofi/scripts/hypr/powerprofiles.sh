@@ -8,7 +8,7 @@ BatterySaving=" Power-Saver"
 
 SelectedProfile=$(echo "$Performance
 $Balanced
-$BatterySaving" | rofi -dmenu -i -theme "$HOME/.config/rofi/Casual-Dark-PowerProfilesMenu.rasi")
+$BatterySaving" | rofi -dmenu -i -theme "$HOME/.config/rofi/themes/Casual-Dark-PowerProfilesMenu.rasi")
 
 if [ "$SelectedProfile" == "$Performance" ]
 then

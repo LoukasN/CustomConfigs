@@ -4,7 +4,7 @@
  * Only kept the window management placement
  *******************************************************/
 
-@import "~/.config/rofi/Casual-Dark.rasi"
+@import "~/.config/rofi/themes/Casual-Dark.rasi"
 
 configuration {
 	show-icons: false;	
