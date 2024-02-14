@@ -1,0 +1,30 @@
+/*******************************************************
+ * Original inspiration: joekamprad [joekamprad //a_t// endeavouros.com]
+ * Modified by: LoukasN
+ * Only kept the window management placement
+ *******************************************************/
+
+@import "~/.config/rofi/Casual-Dark.rasi"
+
+configuration {
+	show-icons: false;	
+}
+
+window {
+    background-color: @background;
+    border:           0;
+    padding:          10;
+    transparency:     "real";
+    width:            150px;
+    location:         northeast;
+}
+
+listview {
+    lines:     3;
+    columns:   1;
+}
+
+/*removes the text input line*/
+mainbox {
+  children: [listview];
+}

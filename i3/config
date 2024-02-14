@@ -64,11 +64,11 @@ bindsym $mod+Shift+q kill
 # A more modern dmenu replacement is rofi:
 bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # Custom script for wifi menu using rofi
-bindsym $mod+i exec bash ~/.config/rofi/rofi-wifi-menu.sh
+bindsym $mod+i exec bash ~/.config/rofi/scripts/global/rofi-wifi-menu.sh
 # Custom Script for bluetooth menu usinsg rofi
-bindsym $mod+b exec bash ~/.config/rofi/rofi-bluetooth-menu.sh
+bindsym $mod+b exec bash ~/.config/rofi/scripts/global/rofi-bluetooth-menu.sh
 # Custom script for changing the wallpaper with rofi
-bindsym $mod+w exec bash ~/.config/rofi/rofi-wallpaper-changer.sh
+bindsym $mod+w exec bash ~/.config/rofi/scripts/i3/rofi-wallpaper-changer.sh
 
 # change focus
 bindsym $mod+h focus left

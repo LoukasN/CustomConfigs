@@ -38,8 +38,7 @@ local plugins = {
 	{"catppuccin/nvim", name = 'catppuccin', priority = 1000},
 	{"EdenEast/nightfox.nvim", priority = 1000},
 	{"folke/tokyonight.nvim", priority = 1000},
-	{'numToStr/Comment.nvim', lazy = false,
-	},
+	{'numToStr/Comment.nvim', lazy = false},
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
