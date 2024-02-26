@@ -39,6 +39,8 @@ local plugins = {
 	{"EdenEast/nightfox.nvim", priority = 1000},
 	{"folke/tokyonight.nvim", priority = 1000},
 	{'numToStr/Comment.nvim', lazy = false},
+	-- latex plugin
+	{'lervag/vimtex', event = "VeryLazy"},
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -61,9 +63,6 @@ local plugins = {
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	},
-	-- latex plugin
-	{'lervag/vimtex', event = "VeryLazy"},
 }
-
 
 require("lazy").setup(plugins)

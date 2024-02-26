@@ -290,3 +290,4 @@ bar {
 include /etc/sway/config.d/*
 # This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway
 output eDP-1 bg /home/loukas/Pictures/wallpapers/Colored_planet.png fill
+output HDMI-A-1 bg /home/loukas/Pictures/wallpapers/frong.png fill

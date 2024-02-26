@@ -16,7 +16,7 @@
     "position": "top",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+    "height": 25,
 
     "modules-left": [
         "sway/workspaces",
@@ -50,9 +50,9 @@
             "critical": 15
         },
         // Connected to AC
-        "format": "  {icon}  {capacity}% ", // Icon: bolt
+        "format": "  {icon}  {capacity}%", // Icon: bolt
         // Not connected to AC
-        "format-discharging": "{icon}  {capacity}% ",
+        "format-discharging": "{icon}  {capacity}%",
         "format-icons": [
             "", // Icon: battery-full
             "", // Icon: battery-three-quarters
@@ -78,7 +78,7 @@
 
     "clock#date": {
       "interval": 10,
-      "format": "{:%d/%m/%Y} |", // Icon: calendar-alt
+      "format": "| {:%d/%m/%Y} |", // Icon: calendar-alt
       "tooltip-format": "{:%e %B %Y}"
     },
 
@@ -99,6 +99,11 @@
         "format": "{}",
         "max-length": 120
     },
+
+	"hyprland/workspaces": {
+		"show-special": false,
+		"all-output": false,
+	},
 
 	"pulseaudio#output": {
 	    "scroll-step": 1,
