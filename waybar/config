@@ -92,16 +92,16 @@
 
     "sway/window": {
         "format": "{}",
-        "max-length": 120
+        "max-length": 200
     },
 
     "hyprland/window": {
-        "format": "{}",
-        "max-length": 120
+		"format": "{}",
+        "max-length": 200,
+		"seperate-outputs": true
     },
 
 	"hyprland/workspaces": {
-		"show-special": false,
 		"all-output": false,
 	},
 
