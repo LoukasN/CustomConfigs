@@ -2,7 +2,7 @@
 <ul>
   <li>kitty</li>
   <li>thunar</li>
-  <li>rofi (The wayland compatible version)</li>
+  <li>rofi</li>
   <li>neovim</li>
   <li>ly (github)</li>
   <li>btop</li>
@@ -37,4 +37,6 @@
   <li>swaybg</li>
   <li>grim</li>
   <li>slurp</li>
+  <li>hyprlock</li>
+  <li>hypridle</li>
 </ul>
