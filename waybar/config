@@ -1,47 +1,36 @@
-// =============================================================================
-//
-// Waybar configuration
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-//
-// =============================================================================
-
 {
-    // -------------------------------------------------------------------------
-    // Global configuration
-    // -------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+// General
+// -------------------------------------------------------------------------
 
     "layer": "top",
-
     "position": "top",
-
-    // If height property would be not present, it'd be calculated dynamically
-    "height": 25,
+    "height": 20,
 
     "modules-left": [
         "sway/workspaces",
 		"hyprland/workspaces",
     ],
+
     "modules-center": [
 		"hyprland/window",
 		"sway/window",
     ],
+
     "modules-right": [
 		"backlight",
 		"pulseaudio#output",
 		"pulseaudio#input",
         "network",
         "battery",
-		"custom/powerprofile",
         "clock#date",
         "clock#time",
 		"tray",
     ],
 
-
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+// Modules
+// -------------------------------------------------------------------------
 
     "battery": {
         "interval": 10,
@@ -49,10 +38,8 @@
             "warning": 30,
             "critical": 15
         },
-        // Connected to AC
-        "format": "  {icon}  {capacity}%", // Icon: bolt
-        // Not connected to AC
-        "format-discharging": "{icon}  {capacity}%",
+        "format": "   {icon}  {capacity}% ", 
+        "format-discharging": " {icon}  {capacity}% ",
         "format-icons": [
             "", // Icon: battery-full
             "", // Icon: battery-three-quarters
@@ -63,29 +50,22 @@
         "tooltip": true
     },
 
-	"custom/powerprofile": {
-		"format": "{} |",
-		"interval": 10,
-		"exec": "bash ~/.config/waybar/powerprofile.sh",
-		"tooltip": false
-	},
-
     "clock#time": {
         "interval": 1,
-        "format": "{:%H:%M:%S}",
+        "format": " {:%H:%M:%S}",
         "tooltip": false
     },
 
     "clock#date": {
       "interval": 10,
-      "format": "| {:%d/%m/%Y} |", // Icon: calendar-alt
+      "format": "| {:%d/%m/%Y} |", 
       "tooltip-format": "{:%e %B %Y}"
     },
 
      "network": {
         "interval": 5,
-        "format-wifi": "|   {essid} ({signalStrength}%) |", // Icon: wifi
-        "format-ethernet": "| 󰈀  {ifname}|", // Icon: ethernet
+        "format-wifi": "|   {essid} ({signalStrength}%) |", 
+        "format-ethernet": "| 󰈀  {ifname} |", 
         "format-disconnected": "| ⚠  Disconnected |",
         "tooltip-format": "{ifname}: {ipaddr}"
     },
@@ -97,7 +77,7 @@
 
     "hyprland/window": {
 		"format": "{}",
-        "max-length": 200,
+        "max-length": 120,
 		"seperate-outputs": true
     },
 
@@ -127,8 +107,8 @@
 	"pulseaudio#input": {
 		"scroll-step": 1,
 		"format": "{format_source}",
-		"format-source": " {volume}%",
-		"format-source-muted": " ({volume}%)",
+		"format-source": " {volume}% ",
+		"format-source-muted": " ({volume}%) ",
 	    "on-click": "pavucontrol",
 		"smooth-scrolling-threshold": 1,
 		"max-volume": 100,
@@ -137,12 +117,13 @@
 
 	"backlight": {
 		"device": "intel_backlight",
-		"format": "  {percent}% |",
+		"format": "   {percent}% |",
 		"tooltip": false,
 	},
 
 	"tray": {
-		"icon-size": 21,
-		"spacing": 10
+		"icon-size": 20,
+		"spacing": 5,
+		"show-passive-items": true
 	},
 }

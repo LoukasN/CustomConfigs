@@ -1,49 +1,73 @@
-
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
-
-/* Reset all styles */
 * {
     border: none;
-    border-radius: 0;
-    min-height: 0;
-    margin: 0;
-    padding: 0;            
+	border-radius: 0;
+	font-family: HackNerdFont;
+	color: white;
+	font-size: 14px;
 }
 
-/* The whole bar */
-#waybar {
-    background: #000000;
+window {
+	font-weight: bold;
+}
+
+window#waybar {
+	background: #000000;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+tooltip label {
+	background-color: #000000;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 3px;
+}
+
+label:focus {
+	background-color: #000000;
+}
+
+#workspaces {
+	transition: none;
+}
+
+#workspaces button {
+    color: #FFFFFF;
+	background-color: transparent;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+#workspaces button.active {
+    border-color: #202020;
     color: white;
-    font-family: HackNerdFont;
-    font-size: 14px;
+    background-color: #646464;
 }
 
-/* Each module */
+#workspace button.focused {
+	background-color: #FFFFFF;
+}
+
+#workspaces button.urgent {
+    border-color: #EB4D4B;
+    color: #c9545d;
+}
+
+
+/* Modules */
+
 #battery,
 #clock,
 #mode,
 #network,
 #pulseaudio,
-#powerprofile,
-#tray {
-    padding-left: 4px;
-    padding-right: 4px;
-}
+#tray
 
-
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
+/* Module styles */
 
 #battery {
     animation-timing-function: linear;
@@ -69,10 +93,6 @@
     animation-duration: 2s;
 }
 
-#clock {
-    /* No styles */
-}
-
 #mode {
     background: #64727D;
     border-top: 2px solid white;
@@ -80,16 +100,8 @@
     padding-bottom: 2px;
 }
 
-#network {
-    /* No styles */
-}
-
 #network.disconnected {
     color: red;
-}
-
-#pulseaudio {
-    /* No styles */
 }
 
 #pulseaudio.output.muted {
@@ -101,30 +113,8 @@
 }
 
 #tray {
-    /* No styles */
-}
-
-#window {
-	font-weight: bold;
-    padding-right: 20px;
-}
-
-#workspaces button {
-    /* To compensate for the top border and still have vertical centering */
-    color: #FFFFFF;
-}
-
-#workspaces button.active {
-    border-color: #202020;
-    color: white;
-    background-color: #646464;
-}
-
-#workspaces button.urgent {
-    border-color: #EC69A0;
-    color: #c9545d;
-}
-
-#powerprofile {
-    /* No styles */
+	padding-left: 6px;
+	padding-right: 6px;
+	margin: 0px 2px;
+	background: #000000;
 }
