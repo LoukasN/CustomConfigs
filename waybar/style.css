@@ -1,12 +1,12 @@
+/*Main Bar*/
+
 * {
     border: none;
 	border-radius: 0;
 	font-family: HackNerdFont;
 	color: white;
 	font-size: 14px;
-}
-
-window {
+	min-height: 0;
 	font-weight: bold;
 }
 
@@ -17,6 +17,34 @@ window#waybar {
 window#waybar.hidden {
 	opacity: 0.2;
 }
+
+
+/*Workspaces*/
+
+#workspaces {
+	transition: none;
+}
+
+#workspaces button {
+	background-color: transparent;
+	padding: 0px 0px;
+}
+
+#workspaces button.active {
+    background-color: #646464;
+}
+
+#workspace button.focused {
+	background-color: #484848;
+}
+
+#workspaces button.urgent {
+    border-color: #EB4D4B;
+    color: #c9545d;
+}
+
+
+/*Tooltip*/
 
 tooltip label {
 	background-color: #000000;
@@ -31,43 +59,14 @@ label:focus {
 	background-color: #000000;
 }
 
-#workspaces {
-	transition: none;
-}
-
-#workspaces button {
-    color: #FFFFFF;
-	background-color: transparent;
-	padding-right: 0px;
-	padding-left: 0px;
-}
-
-#workspaces button.active {
-    border-color: #202020;
-    color: white;
-    background-color: #646464;
-}
-
-#workspace button.focused {
-	background-color: #FFFFFF;
-}
-
-#workspaces button.urgent {
-    border-color: #EB4D4B;
-    color: #c9545d;
-}
-
 
 /* Modules */
 
 #battery,
-#clock,
 #mode,
 #network,
 #pulseaudio,
 #tray
-
-/* Module styles */
 
 #battery {
     animation-timing-function: linear;
@@ -93,12 +92,6 @@ label:focus {
     animation-duration: 2s;
 }
 
-#mode {
-    background: #64727D;
-    border-top: 2px solid white;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-}
 
 #network.disconnected {
     color: red;
@@ -117,4 +110,11 @@ label:focus {
 	padding-right: 6px;
 	margin: 0px 2px;
 	background: #000000;
+}
+
+#mode { 
+	background: #64727D;
+	border-top: 2px solid white;
+	/* To compensate for the top border and still have vertical centering */
+	padding-bottom: 2px;
 }

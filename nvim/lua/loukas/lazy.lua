@@ -40,7 +40,7 @@ local plugins = {
 	{"folke/tokyonight.nvim", priority = 1000},
 	{'numToStr/Comment.nvim', lazy = false},
 	-- latex plugin
-	{'lervag/vimtex', event = "VeryLazy"},
+	{'lervag/vimtex'},
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",

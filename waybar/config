@@ -5,16 +5,17 @@
 
     "layer": "top",
     "position": "top",
-    "height": 30,
+    "height": 25,
 
     "modules-left": [
         "sway/workspaces",
 		"hyprland/workspaces",
+		"hyprland/submap"
     ],
 
     "modules-center": [
 		"hyprland/window",
-		"sway/window",
+		"sway/window"
     ],
 
     "modules-right": [
@@ -25,6 +26,7 @@
         "battery",
         "clock#date",
         "clock#time",
+		"hyprland/language",
 		"tray",
     ],
 
@@ -77,12 +79,13 @@
 
     "hyprland/window": {
 		"format": "{}",
-        "max-length": 120,
+        "max-length": 60,
 		"seperate-outputs": true
     },
 
 	"hyprland/workspaces": {
-		"all-output": false,
+		"format": "{}",
+		"all-output": false
 	},
 
 	"pulseaudio#output": {
@@ -126,4 +129,17 @@
 		"spacing": 5,
 		"show-passive-items": true
 	},
+
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": " | EN ",
+		"format-gr": " | GR ",
+		"tooltip": true
+	},
+
+	"hyprland/submap": {
+		"format": " ✌️ ",
+		"max-length": 8,
+		"tooltip": false
+	}
 }
