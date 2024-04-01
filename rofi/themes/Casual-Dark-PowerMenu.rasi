@@ -11,9 +11,10 @@ configuration {
 }
 
 window {
+	border-color:     #FFFFFF;
     background-color: @background;
-    border:           0;
-    padding:          10;
+    border:           1;
+    padding:          8;
     transparency:     "real";
     width:            123px;
     location:         northeast;
