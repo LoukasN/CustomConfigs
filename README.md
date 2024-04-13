@@ -9,12 +9,12 @@
   <li>dunst</li>
   <li>zsh</li>
   <li>powerlevel10k (github) (for zsh)</li>
-  <li>tlp</li>
+  <li>tlp || auto-cpufreq</li>
   <li>i3blocks / waybar</li>
   <li>Flat-remix (theme)</li>
   <li>Papirus-icon-theme</li>
-  <li>qt5ct (for qt app theming)</li>
-  <li>zathura (for pdf viewing with latex)</li>
+  <li>qt5ct (Qt app theming)</li>
+  <li>zathura </li>
 </ul>
 
 ## If using i3
