@@ -3,9 +3,9 @@
 * {
     border: none;
 	border-radius: 0;
-	font-family: HackNerdFont;
+	font-family: MartianMonoNerdFont;
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 	min-height: 0;
 	font-weight: bold;
 }
@@ -45,6 +45,9 @@ window#waybar.hidden {
 #workspaces button.urgent {
     border-color: #EB4D4B;
     color: #c9545d;
+}
+
+#workspaces button.special {
 }
 
 
