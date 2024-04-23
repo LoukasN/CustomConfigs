@@ -31,7 +31,7 @@
   <li>slurp</li>
 </ul>
 
-## If using Hyprland (WIP)
+## If using Hyprland
 <ul>
   <li>hyprland</li>
   <li>waybar</li>
