@@ -47,7 +47,7 @@ echo "- Installing powerlevel10k from git into GitApps dir"
 mkdir ~/GitApps
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/GitApps/powerlevel10k
 echo "- Setting zsh as default shell"
-chshell "$USER" --shell=/usr/bin/zsh
+chsh "$USER" --shell=/usr/bin/zsh
 echo "- Adding fonts"
 mv HackNerdFont ~/.local/share/fonts/
 mv MartianMono ~/.local/share/fonts/
