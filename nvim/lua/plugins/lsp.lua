@@ -39,10 +39,18 @@ return {
 			lspconfig.jdtls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.vhdl_ls.setup({
+				capabilities = capabilities,
+			})
 
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Available code actions" })
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+			vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Format file" })
+			vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+			vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+			vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 		end,
 	}
 }
