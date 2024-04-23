@@ -15,6 +15,7 @@
   <li>Papirus-icon-theme</li>
   <li>qt5ct (Qt app theming)</li>
   <li>zathura </li>
+  <li>zoxide</li>
 </ul>
 
 ## If using i3
