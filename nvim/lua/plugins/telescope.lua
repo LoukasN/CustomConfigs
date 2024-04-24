@@ -30,8 +30,16 @@ return {
 		"debugloop/telescope-undo.nvim",
 		config = function()
 			require("telescope").load_extension("undo")
-			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", {desc = "Show undo menu"})
 		end
 	},
+	{
+		'jvgrootveld/telescope-zoxide',
+		dependencies = { 'nvim-lua/popup.nvim' },
+		config = function()
+			vim.keymap.set("n", "<leader>z", "<cmd>lua require('telescope').extensions.zoxide.list {}<cr>:Alpha<cr>", {desc = "Change directory"})
+		end
+	}
+
 
 }
