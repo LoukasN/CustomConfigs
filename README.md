@@ -1,7 +1,7 @@
 ## Global
 <ul>
   <li>kitty</li>
-  <li>thunar</li>
+  <li>thunar / pcmanfm / ranger</li>
   <li>rofi</li>
   <li>neovim</li>
   <li>ly (github)</li>
