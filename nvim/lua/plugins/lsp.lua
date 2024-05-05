@@ -10,36 +10,37 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {
-			auto_install = true
-		}
+			auto_install = true,
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.clangd.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.bashls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
+			})
+			lspconfig.pylsp.setup({
+				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
-			lspconfig.texlab.setup({
-				capabilities = capabilities })
 			lspconfig.sqls.setup({
-				capabilities = capabilities
-			})
-			lspconfig.jdtls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.vhdl_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.typst_lsp.setup({
 				capabilities = capabilities,
 			})
 
@@ -47,10 +48,9 @@ return {
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Available code actions" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-			vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Format file" })
-			vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-			vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-			vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 		end,
-	}
+	},
 }

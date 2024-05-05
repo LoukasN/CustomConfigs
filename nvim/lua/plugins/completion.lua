@@ -1,6 +1,6 @@
 return {
 	{
-		"hrsh7th/cmp-nvim-lsp"
+		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -26,21 +26,20 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
-					-- confirm completion
-					['<C-y>'] = cmp.mapping.confirm({select=true}),
-					--Choose next/prev selection in menu
-					['<C-n>'] = cmp.mapping.select_next_item(),
-					['<C-p>'] = cmp.mapping.select_prev_item(),
-					['<C-e>'] = cmp.mapping.abort(),
-					['<CR>'] = cmp.mapping.confirm {
+					["<C-y>"] = cmp.mapping.confirm({ select = true }),
+					["<C-n>"] = cmp.mapping.select_next_item(),
+					["<C-p>"] = cmp.mapping.select_prev_item(),
+					["<C-e>"] = cmp.mapping.abort(),
+					["<CR>"] = cmp.mapping.confirm({
 						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
-					},
+					}),
 				}),
+
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-					{ name = "luasnip" }, -- For luasnip users.
-					}, {
+					{ name = "luasnip" },
+				}, {
 					{ name = "buffer" },
 				}),
 			})

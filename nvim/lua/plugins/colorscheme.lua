@@ -26,7 +26,7 @@ return {
 		config = function()
 			require('nightfox').setup({
 				options = {
-					transparent = true,
+					transparent = false,
 				}
 			})
 			vim.cmd.colorscheme "terafox"
