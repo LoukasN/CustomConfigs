@@ -1,10 +1,10 @@
 ## Global
 <ul>
   <li>kitty</li>
-  <li>thunar / pcmanfm / ranger</li>
+  <li>pcmanfm / ranger</li>
   <li>rofi</li>
   <li>neovim</li>
-  <li>ly (github)</li>
+  <li>ly</li>
   <li>btop</li>
   <li>dunst</li>
   <li>zsh</li>
@@ -13,7 +13,7 @@
   <li>i3blocks / waybar</li>
   <li>Flat-remix (theme)</li>
   <li>Papirus-icon-theme</li>
-  <li>qt5ct (Qt app theming)</li>
+  <li>qt5ct</li>
   <li>zathura </li>
   <li>zoxide</li>
 </ul>
