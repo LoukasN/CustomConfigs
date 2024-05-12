@@ -2,10 +2,10 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		priority = 1000 ,
+		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				flavour = "macchiato", -- latte, frappe, macchiato, mocha
+				flavour = "mocha", -- latte, frappe, macchiato, mocha
 				transparent_background = false,
 				integrations = {
 					cmp = true,
@@ -17,20 +17,20 @@ return {
 				},
 			})
 			-- vim.cmd.colorscheme "catppuccin"
-		end
+		end,
 	},
 
 	{
 		"EdenEast/nightfox.nvim",
 		priority = 1000,
 		config = function()
-			require('nightfox').setup({
+			require("nightfox").setup({
 				options = {
 					transparent = false,
-				}
+				},
 			})
-			vim.cmd.colorscheme "terafox"
-		end
+			vim.cmd.colorscheme "nightfox"
+		end,
 	},
 
 	{
@@ -38,19 +38,21 @@ return {
 		priority = 1000,
 		config = function()
 			require("tokyonight").setup({
-				transparent = true,
-				style = "storm" -- storm, moon, night, day
+				transparent = false,
+				style = "night", -- storm, moon, night, day
 			})
 			-- vim.cmd.colorscheme "tokyonight"
-		end
+		end,
 	},
 
 	{
 		"Mofiqul/dracula.nvim",
 		config = function()
-			-- vim.cmd.colorscheme "dracula"
-			-- vim.cmd.colorscheme "dracula-soft"
-		end
-	}
-
+			require("dracula").setup({
+				transparent_bg = false,
+			})
+			-- vim.cmd.colorscheme("dracula")
+			-- vim.cmd.colorscheme("dracula-soft")
+		end,
+	},
 }

@@ -17,5 +17,5 @@ return {
 		vim.keymap.set("n", "<A-7>", function() ui.nav_file(7) end)
 		vim.keymap.set("n", "<A-8>", function() ui.nav_file(8) end)
 		vim.keymap.set("n", "<A-9>", function() ui.nav_file(9) end)
-	end
+	end,
 }

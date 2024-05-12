@@ -51,6 +51,7 @@ return {
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, { desc = "Show information" })
 		end,
 	},
 }
