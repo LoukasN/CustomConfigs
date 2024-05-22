@@ -1,0 +1,6 @@
+font=MartianMonoNerFont 9
+background-color=#393D47
+border-color=#202020
+border-size=3
+icon-path=/usr/share/icons/Papirus-Dark
+default-timeout=10000

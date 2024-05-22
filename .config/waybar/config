@@ -1,0 +1,143 @@
+{
+// -------------------------------------------------------------------------
+// General
+// -------------------------------------------------------------------------
+
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+
+    "modules-left": [
+        "sway/workspaces",
+		"hyprland/workspaces",
+		"hyprland/submap",
+		"hyprland/window",
+		"sway/window"
+    ],
+
+    "modules-center": [ ],
+
+    "modules-right": [
+		"backlight",
+		"pulseaudio#output",
+		"pulseaudio#input",
+        "network",
+        "battery",
+        "clock#date",
+        "clock#time",
+		"hyprland/language",
+		"tray",
+    ],
+
+// -------------------------------------------------------------------------
+// Modules
+// -------------------------------------------------------------------------
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "   {icon}  {capacity}% ", 
+        "format-discharging": " {icon}  {capacity}% ",
+        "format-icons": [
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
+            "", // Icon: battery-half
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
+        ],
+        "tooltip": true
+    },
+
+    "clock#time": {
+        "interval": 1,
+        "format": " {:%H:%M:%S}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+      "interval": 10,
+      "format": "| {:%d/%m/%Y} |", 
+      "tooltip-format": "{:%e %B %Y}"
+    },
+
+     "network": {
+        "interval": 5,
+        "format-wifi": "|   {essid} ({signalStrength}%) |", 
+        "format-ethernet": "| 󰈀  {ifname} |", 
+        "format-disconnected": "| ⚠  Disconnected |",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 200
+    },
+
+    "hyprland/window": {
+		"format": "{}",
+        "max-length": 200,
+		"seperate-outputs": true
+    },
+
+	"hyprland/workspaces": {
+		"format": "{}",
+		"all-output": false
+	},
+
+	"pulseaudio#output": {
+	    "scroll-step": 1,
+	    "format": " {icon} {volume}% ",
+	    "format-bluetooth": " {icon} {volume}%  ",
+	    "format-muted": "  {volume}% ",
+	    "format-icons": {
+	        "headphones": "",
+	        "handsfree": "",
+	        "headset": "",
+	        "phone": "",
+	        "portable": "",
+	        "car": "",
+	        "default": ["", " "]
+	    },
+		"smooth-scrolling-threshold": 1,
+		"max-volume": 100,
+	    "on-click": "pavucontrol"
+	},  
+
+	"pulseaudio#input": {
+		"scroll-step": 1,
+		"format": "{format_source}",
+		"format-source": " ",
+		"format-source-muted": " ",
+	    "on-click": "pavucontrol",
+		"smooth-scrolling-threshold": 1,
+		"max-volume": 100,
+	    "on-click": "pavucontrol"
+	},
+
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "  {percent}% |",
+		"tooltip": false,
+	},
+
+	"tray": {
+		"icon-size": 20,
+		"spacing": 5,
+		"show-passive-items": true
+	},
+
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": " | EN ",
+		"format-gr": " | GR ",
+	},
+
+	"hyprland/submap": {
+		"format": " ✌️ ",
+		"max-length": 8,
+		"tooltip": false
+	}
+}
