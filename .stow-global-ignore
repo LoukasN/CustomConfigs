@@ -1,4 +1,0 @@
-\.git
-^/README.*
-^/.config/zsh/plugins
-^/.config/zsh/\.p10k\.zsh
