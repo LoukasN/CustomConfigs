@@ -1,0 +1,293 @@
+# Read `man 5 sway` for a complete reference.
+
+# Autostart
+#exec waybar
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term kitty
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu rofi -show drun | xargs swaymsg exec --
+# The lock screen to use
+set $lock 'swaylock -f -e -c 000000 --font HackNerdFont --indicator-radius 65 --indicator-thickness 7'
+
+# System mode is a power menu
+set $mode_system Press (l) Lock, (e) Logout, (s) Suspend, (r) Reboot, (S) Shutdown, (R) UEFI
+mode "$mode_system" {
+	bindsym l exec $lock, mode "default"
+	bindsym e exit
+	bindsym s exec --no-startup-id systemctl suspend, mode "default"
+	bindsym r exec --no-startup-id systemctl reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"	
+	bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
+
+# return to default mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Delete mode "$mode_system"
+
+### Output configuration
+#
+# Wallpapers are in the end of the file because it changes using a rofi script
+output eDP-1 resolution 1920x1080@60Hz position 1920,0
+output HDMI-A-1 resolution 1920x1080@75Hz
+set $primary eDP-1
+set $secondary HDMI-A-1
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+exec swayidle 
+
+# Lock when lid closes
+bindswitch --reload --locked lid:on exec $lock
+
+#
+### Input configuration
+#
+input type:touchpad {
+	dwt enabled
+	tap enabled
+	natural_scroll enabled
+	middle_emulation enabled
+}
+
+input * {
+	xkb_layout "us,gr"
+	xkb_options "grp:alt_shift_toggle"
+}
+
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start your launcher
+bindsym $mod+d exec $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+
+# Brightness
+set $refresh_bar_sound pkill -RTMIN+13 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && $refresh_bar_sound
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1-% && $refresh_bar_sound
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_bar pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_bar
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_bar
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_bar
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_bar
+
+# Custom script for wifi menu using rofi
+bindsym $mod+i exec bash ~/.config/rofi/scripts/global/rofi-wifi-menu.sh
+# Custom Script for bluetooth menu usinsg rofi
+bindsym $mod+b exec bash ~/.config/rofi/scripts/global/rofi-bluetooth-menu.sh
+# Custom script for changing the wallpaper with rofi
+bindsym $mod+w exec bash ~/.config/rofi/scripts/sway/rofi-wallpaper-changer-sway.sh
+
+# Running the VM
+bindsym $mod+Shift+w exec ~/WindowsVM/cli-vm.sh
+for_window [app_id="virt-manager"] move to workspace 10
+
+# Screenshot using grim and slurp
+set $screenshot grim ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-%H-%M-%S").png
+bindsym --release Print exec $screenshot && notify-send 'Screenshot captured'
+set $screenshot slurp | grim -g - ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-%H-%M-%S").png
+bindsym --release Shift+Print exec $screenshot && notify-send 'Screenshot captured'
+
+#
+# Moving around:
+#
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+#
+# Workspaces:
+#
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
+
+# switch to next/previous workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# Moving workspaces between monitors
+bindsym $mod+Shift+Left move workspace to output $primary
+bindsym $mod+Shift+Right move workspace to output $secondary
+
+# locking workspace to a screen
+workspace 1 output $primary
+workspace 2 output $secondary
+#
+
+# Layout stuff:
+#
+# Toggle split orientation
+bindsym $mod+Shift+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+space floating toggle
+
+# Automatically change orientation
+for_window [class=.*] split toggle
+
+# Default windows
+default_orientation horizontal
+workspace_layout default
+#
+
+#
+# Scratchpad:
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+#
+
+#
+# Resizing containers:
+#
+bindsym $mod+Left resize shrink width 20px
+bindsym $mod+Down resize grow height 20px
+bindsym $mod+Up resize shrink height 20px
+bindsym $mod+Right resize grow width 20px
+
+#
+# Window appearance:
+#
+#Window title           border  bground text    indicator child_border
+client.focused          #FFFFFF #878787 #FFFFFF #FFFFFF   #FFFFFF
+client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #8C8C8C   #8C8C8C
+client.unfocused        #4C4C4C #222222 #888888 #292D2E   #4C4C4C
+client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
+
+# Border and gaps
+gaps inner 5
+gaps outer 5
+default_border pixel 1
+smart_borders on
+smart_gaps on
+hide_edge_borders smart
+
+# Focus does not follow mouse 
+focus_follows_mouse yes
+
+# Gtk theme changes
+set $gnome-schema org.gnome.desktop.interface
+
+exec {
+    gsettings set $gnome-schema gtk-theme 'Flat-Remix-GTK-Grey-Darkest'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
+    gsettings set $gnome-schema font-name 'HackNerdFont'
+	gsettings set $gnome-schema font-hinting 'medium'
+	gsettings set $gnome-schema font-antialising 'rgba'
+}
+
+#
+# Floating settings
+#
+
+# Set global floating rules
+for_window [floating] resize set 1000 1000 ; move position center
+
+# Set floating per app
+for_window [class="steam"] floating enabled
+for_window [class="Gimp-2.10"] floating enabled
+#
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+	swaybar_command waybar
+	position top
+	font pango:HackNerdFont 10
+	colors {
+		#status_command i3blocks -c ~/.config/sway/i3blocks.conf
+		statusline #FFFFFF
+		background #000000
+		inactive_workspace #323232 #323232 #5c5c5c
+		separator  #FFFFFF
+		focused_workspace  #202020 #646464 #FFFFFF
+		active_workspace   #202020 #646464 #FFFFFF
+		inactive_workspace #161616 #202020 #FFFFFF
+		urgent_workspace   #EC69A0 #DB3279 #FFFFFF
+		binding_mode       #2A2A2A #646464 #FFFFFF
+	}
+}
+#
+
+include /etc/sway/config.d/*
+# This 3 lines are written by the script located in ~/.config/rofi/rofi-wallpaper-changer-sway
+output eDP-1 bg /home/loukas/Pictures/wallpapers/Colored_planet.png fill
+output HDMI-A-1 bg /home/loukas/Pictures/wallpapers/frong.png fill
