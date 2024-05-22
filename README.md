@@ -39,5 +39,5 @@ stow .
 - Grim
 
 ```
-sudo dnf install hyprland kitty pcmanfm ranger rofi neovim btop mako zsh waybar papirus-icon-theme qt5ct zathura zoxide hyprland swaybg slurp grim
+sudo dnf install hyprland kitty pcmanfm ranger rofi-wayland neovim btop mako zsh waybar papirus-icon-theme qt5ct zathura zoxide hyprland swaybg slurp grim
 ```
