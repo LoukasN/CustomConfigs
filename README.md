@@ -31,6 +31,7 @@ stow .
 - waybar
 - Papirus-icon-theme
 - Qt5ct
+- Lxappearance
 - Zathura
 - Zoxide
 - Hyprland
