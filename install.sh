@@ -58,3 +58,5 @@ if [[ -d "$HOME/Pictures" ]]; then
 else
 	mv Pictures ~/
 fi
+cd ~/.dotfiles
+stow .
