@@ -25,6 +25,7 @@ MakeDir "$HOME/.config/rofi"
 MakeDir "$HOME/.config/sway"
 MakeDir "$HOME/.config/tmux"
 MakeDir "$HOME/.config/waybar"
+MakeDir "$HOME/.config/zsh/plugins"
 MakeDir "$HOME/.local/share"
 echo "- Installing powerlevel10k from git into GitApps dir"
 mkdir ~/GitApps
