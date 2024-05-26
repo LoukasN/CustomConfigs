@@ -6,10 +6,10 @@
 # Cloning the repo
 git clone https://github.com/LoukasN/.dotfiles
 # Installing stow
-sudo dnf install stow
-# Setting up the dotfiles
+sudo pacman -S stow
+# Setting up the dotfiles with the install script
 cd .dotfiles
-stow .
+./install.sh
 ````
 
 ## Installing packages
@@ -40,5 +40,5 @@ stow .
 - Grim
 
 ```
-sudo dnf install hyprland kitty pcmanfm ranger rofi-wayland neovim btop mako zsh waybar papirus-icon-theme qt5ct zathura zoxide hyprland swaybg slurp grim
+sudo pacman -S hyprland kitty pcmanfm ranger rofi-wayland neovim btop mako zsh waybar papirus-icon-theme qt5ct zathura zoxide hyprland swaybg slurp grim
 ```
