@@ -27,7 +27,7 @@ MakeDir "$HOME/.config/tmux"
 MakeDir "$HOME/.config/waybar"
 MakeDir "$HOME/.config/zsh/plugins"
 MakeDir "$HOME/.local/share"
-echo "- Installing powerlevel10k from git into GitApps dir"
+echo "- Installing powerlevel10k from git into GitApps directory"
 mkdir ~/GitApps
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/GitApps/powerlevel10k
 cd ~/.dotfiles
