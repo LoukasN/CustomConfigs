@@ -5,30 +5,46 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi	
 
-# Lines configured by zsh-newuser-install
+# History settings
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTDUP=erase
+HISTSIZE=5000
+SAVEHIST=5000
+
+# Options
 setopt autocd
-# End of lines configured by zsh-newuser-install
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Keybinds
+bindkey -e
+bindkey '^n' history-search-forward
+bindkey '^p' history-search-backward
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/loukas/.zshrc'
-
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Sourcing aliases and plugin "manager"
 source ~/.aliases
 source ~/.config/zsh/zsh-functions
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "jeffreytse/zsh-vi-mode"
 source ~/GitApps/powerlevel10k/powerlevel10k.zsh-theme
 
 # Jump
 eval "$(zoxide init --cmd cd zsh)"
+
+# Fzf
+eval "$(fzf --zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

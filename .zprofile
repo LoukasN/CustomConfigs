@@ -5,4 +5,5 @@ export XDG_CACHE_HOME=$HOME/.cache
 export ZDOTDIR=$HOME/.config/zsh 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export PATH=$PATH:$HOME/.cargo/bin
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 ################################################
