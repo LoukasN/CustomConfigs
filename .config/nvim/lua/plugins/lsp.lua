@@ -10,6 +10,12 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {
+			ensure_installed = {
+				"pylsp",
+				"lua_ls",
+				"clangd",
+				"typst_lsp",
+			},
 			auto_install = true,
 		},
 	},
