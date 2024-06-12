@@ -66,7 +66,6 @@ label:focus {
 	background-color: #000000;
 }
 
-
 /* Modules */
 
 #battery,
@@ -98,7 +97,6 @@ label:focus {
     animation-name: blink-critical;
     animation-duration: 2s;
 }
-
 
 #network.disconnected {
     color: red;
