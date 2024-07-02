@@ -16,7 +16,7 @@ return {
 					mini = false,
 				},
 			})
-			vim.cmd.colorscheme "catppuccin"
+			-- vim.cmd.colorscheme "catppuccin"
 		end,
 	},
 
@@ -29,7 +29,7 @@ return {
 					transparent = true,
 				},
 			})
-			-- vim.cmd.colorscheme("nightfox")
+			vim.cmd.colorscheme("nightfox")
 		end,
 	},
 
