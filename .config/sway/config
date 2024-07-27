@@ -21,21 +21,6 @@ set $menu rofi -show drun | xargs swaymsg exec --
 # The lock screen to use
 set $lock 'swaylock -f -e -c 000000 --font HackNerdFont --indicator-radius 65 --indicator-thickness 7'
 
-# System mode is a power menu
-set $mode_system Press (l) Lock, (e) Logout, (s) Suspend, (r) Reboot, (S) Shutdown, (R) UEFI
-mode "$mode_system" {
-	bindsym l exec $lock, mode "default"
-	bindsym e exit
-	bindsym s exec --no-startup-id systemctl suspend, mode "default"
-	bindsym r exec --no-startup-id systemctl reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"	
-	bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
-
-# return to default mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-bindsym $mod+Shift+Delete mode "$mode_system"
 
 ### Output configuration
 #
@@ -123,6 +108,9 @@ set $screenshot grim ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-%H-%M-%S").pn
 bindsym --release Print exec $screenshot && notify-send 'Screenshot captured'
 set $screenshot slurp | grim -g - ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-%H-%M-%S").png
 bindsym --release Shift+Print exec $screenshot && notify-send 'Screenshot captured'
+
+# Power menu script
+bindsym $mod+Shift+Delete exec bash ~/.config/rofi/scripts/hypr/powermenu.sh
 
 #
 # Moving around:
