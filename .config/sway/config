@@ -110,7 +110,7 @@ set $screenshot slurp | grim -g - ~/Pictures/screenshots/screenshot-$("%Y-%m-%d-
 bindsym --release Shift+Print exec $screenshot && notify-send 'Screenshot captured'
 
 # Power menu script
-bindsym $mod+Shift+Delete exec bash ~/.config/rofi/scripts/hypr/powermenu.sh
+bindsym $mod+Shift+Delete exec bash ~/.config/rofi/scripts/sway/powermenu.sh
 
 #
 # Moving around:
