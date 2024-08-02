@@ -3,9 +3,10 @@
 * {
     border: none;
 	border-radius: 0;
-	font-family: MartianMonoNerdFont;
+	/*font-family: MartianMonoNerdFont;*/
+	font-family: JetBrainsMono Nerd Font;
 	color: white;
-	font-size: 12px;
+	font-size: 14px;
 	min-height: 0;
 	font-weight: bold;
 }
