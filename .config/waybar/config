@@ -103,7 +103,7 @@
 	    },
 		"smooth-scrolling-threshold": 1,
 		"max-volume": 100,
-	    "on-click": "pavucontrol"
+	    "on-click": "pavucontrol -t 1"
 	},  
 
 	"pulseaudio#input": {
@@ -111,10 +111,9 @@
 		"format": "{format_source}",
 		"format-source": " ",
 		"format-source-muted": " ",
-	    "on-click": "pavucontrol",
 		"smooth-scrolling-threshold": 1,
 		"max-volume": 100,
-	    "on-click": "pavucontrol"
+	    "on-click": "pavucontrol -t 4"
 	},
 
 	"backlight": {
