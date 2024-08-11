@@ -2,15 +2,15 @@
 
 ## Getting the dotfiles
 
-Cloning the repo
+Clone this repo
 ````
 git clone https://github.com/LoukasN/.dotfiles
 ````
-Installing stow
+Install stow
 ````
 sudo pacman -S stow
 ````
-Setting up the dotfiles with the install script
+Set up the dotfiles using the install script
 ````
 cd .dotfiles
 ./install.sh
