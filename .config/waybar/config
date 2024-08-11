@@ -76,17 +76,6 @@
         "max-length": 200
     },
 
-    "hyprland/window": {
-		"format": "{}",
-        "max-length": 200,
-		"seperate-outputs": true
-    },
-
-	"hyprland/workspaces": {
-		"format": "{}",
-		"all-output": false
-	},
-
 	"pulseaudio#output": {
 	    "scroll-step": 1,
 	    "format": " {icon} {volume}% ",
