@@ -44,5 +44,5 @@ cd .dotfiles
 - Grim
 
 ```
-sudo pacman -S hyprland kitty pcmanfm ranger rofi-wayland neovim btop mako zsh waybar papirus-icon-theme qt5ct zathura zoxide hyprland swaybg slurp grim
+sudo pacman -S hyprland kitty pcmanfm ranger rofi-wayland neovim btop mako zsh waybar papirus-icon-theme qt5ct zathura zoxide hyprland swaybg slurp grim nwg=look
 ```
