@@ -36,7 +36,7 @@ return {
 		'jvgrootveld/telescope-zoxide',
 		dependencies = { 'nvim-lua/popup.nvim' },
 		config = function()
-			vim.keymap.set("n", "<leader>z", "<cmd>lua require('telescope').extensions.zoxide.list {}<cr>:Alpha<cr>", {desc = "Change directory"})
+			vim.keymap.set("n", "<leader>z",require('telescope').extensions.zoxide.list, {desc = "Change directory"})
 		end
 	}
 

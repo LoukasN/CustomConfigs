@@ -14,7 +14,7 @@ return {
 		end
 		vim.keymap.set("n", "<c-cr>", api.tree.change_root_to_node, opts("cd"))
 		-- Disabling Netrw
-		vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeToggle<cr>")
+		vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeOpen<cr>")
 		vim.g.loaded_netrw       = 1
 		vim.g.loaded_netrwPlugin = 1
 	end,
