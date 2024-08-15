@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EssentialPackages=("kitty" "rofi-wayland" "neovim" "ly" "mako" "zsh" w"aybar" "papirus-icon-theme" "zoxide" "hyprland" "swaybg" "slurp" "grim")
+EssentialPackages=("kitty" "rofi-wayland" "neovim" "ly" "mako" "zsh" w"aybar" "papirus-icon-theme" "zoxide" "hyprland" "swaybg" "slurp" "grim" "sway")
 OptionalPackages=("pcmanfm" "ranger" "btop" "qt5ct" "zathura" "nwg-look" "fzf" "ripgrep")
 
 PackageManager="pacman --noconfirm -S"
@@ -66,6 +66,7 @@ echo "- Installing powerlevel10k from git into GitApps directory"
 mkdir ~/GitApps
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/GitApps/powerlevel10k
 
+# Stow
 InstallApps "stow"
 echo "- Using stow for the dotfiles"
 cd .dotfiles
@@ -78,6 +79,9 @@ else
 	echo "- Changing user shell to zsh"
 	chsh --shell "/usr/bin/zsh" $USER
 fi
+
+# Enabling login manager
+sudo systemctl enable ly
 
 echo "- Script is finished"
 echo "- Logout out and log back in"
