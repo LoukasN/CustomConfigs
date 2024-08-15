@@ -7,14 +7,14 @@ PackageManager="pacman --noconfirm -S"
 
 function MakeDir {
 	DirName="$1"
-	if [[ -d "$DirName" ]]; then
+	if [[ ! -d "$DirName" ]]; then
 		echo "Adding $DirName"
 		mkdir -p "$DirName"
 	fi
 }
 
 function InstallApps {
-	sudo "$PackageManager" "$1"
+	sudo $PackageManager "$1"
 }
 
 echo "-----------------------"
@@ -45,14 +45,16 @@ MakeDir "$HOME/Pictures/wallpapers"
 echo "Installing applications"
 InstallApps "$EssentialPackages"
 while true; do
-	read -p -r "Do you want to install optional packages? (y/n)" confirmation
-	if [[ $confirmation == [yY] ]]; then
+	read -p "Do you want to install optional packages? (y/n)" confirmation
+	if [[ $confirmation =~ ^[yY]$ ]]; then
 		echo "Installing optional packages"	
 		InstallApps "$OptionalPackages"
 		break
-	elif [[ $confirmation == [nN] ]]; then
+	elif [[ $confirmation =~ ^[nN]$ ]]; then
 		echo "Not installing optional packages"
 		break
+	else
+		echo "Invalid input. Enter 'y' or 'n'"
 	fi
 done
 
@@ -63,13 +65,16 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/GitApps/power
 
 InstallApps "stow"
 echo "- Using stow for the dotfiles"
-cd ~/.dotfiles
+cd .dotfiles
 stow --adopt .
 
 # Change the shell
 if [[ $SHELL =~ /zsh$ ]]; then
-	exit
+	echo "- Shell is alredy zsh"
 else
 	echo "- Changing user shell to zsh"
 	chsh --shell "/usr/bin/zsh" $USER
 fi
+
+echo "- Script is finished"
+echo "- Logout out and log back in"
