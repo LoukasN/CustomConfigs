@@ -1,7 +1,7 @@
 #!/bin/bash
 
-EssentialPackages="kitty rofi-wayland neovim ly mako zsh waybar Papirus-icon-theme zoxide hyprland swaybg slurp grim"
-OptionalPackages="pcmanfm ranger btop qt5ct zathura nwg-look fzf ripgrep"
+EssentialPackages=("kitty" "rofi-wayland" "neovim" "ly" "mako" "zsh" w"aybar" "papirus-icon-theme" "zoxide" "hyprland" "swaybg" "slurp" "grim")
+OptionalPackages=("pcmanfm" "ranger" "btop" "qt5ct" "zathura" "nwg-look" "fzf" "ripgrep")
 
 PackageManager="pacman --noconfirm -S"
 
@@ -14,7 +14,10 @@ function MakeDir {
 }
 
 function InstallApps {
-	sudo $PackageManager "$1"
+	for package in "$@"; do
+		echo "Installing Essential apps"
+		sudo $PackageManager "$package"
+	done
 }
 
 echo "-----------------------"
@@ -43,12 +46,12 @@ MakeDir "$HOME/Pictures/wallpapers"
 
 # Packages
 echo "Installing applications"
-InstallApps "$EssentialPackages"
+InstallApps "${EssentialPackages[@]}"
 while true; do
 	read -p "Do you want to install optional packages? (y/n)" confirmation
 	if [[ $confirmation =~ ^[yY]$ ]]; then
 		echo "Installing optional packages"	
-		InstallApps "$OptionalPackages"
+		InstallApps "${OptionalPackages[@]}"
 		break
 	elif [[ $confirmation =~ ^[nN]$ ]]; then
 		echo "Not installing optional packages"
