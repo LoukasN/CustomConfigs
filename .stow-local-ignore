@@ -1,0 +1,7 @@
+^/README.*
+^/LICENSE.*
+^/COPYING
+\.git
+\.gitignore
+^/install.sh
+\.stow-local-ignore
