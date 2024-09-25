@@ -54,6 +54,7 @@
     "clock#time": {
         "interval": 1,
         "format": " {:%H:%M:%S}",
+		"timezone": "Europe/Athens",
         "tooltip": false
     },
 
@@ -75,6 +76,11 @@
         "format": "{}",
         "max-length": 200
     },
+
+	"sway/workspaces": {
+		"format": "{}",
+		"disable-scroll": true
+	},
 
 	"pulseaudio#output": {
 	    "scroll-step": 1,
