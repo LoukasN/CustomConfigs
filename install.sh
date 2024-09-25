@@ -2,6 +2,7 @@
 
 EssentialPackages=("kitty" "rofi-wayland" "neovim" "ly" "mako" "zsh" w"aybar" "papirus-icon-theme" "zoxide" "hyprland" "swaybg" "slurp" "grim" "sway")
 OptionalPackages=("pcmanfm" "ranger" "btop" "qt5ct" "zathura" "nwg-look" "fzf" "ripgrep")
+Fonts=("ttf-dejavu-nerd" "ttf-hack-nerd" "ttf-jetbrains-mono-nerd" "ttf-martian-mono-nerd")
 
 PackageManager="pacman --noconfirm -S"
 
@@ -60,6 +61,7 @@ while true; do
 		echo "Invalid input. Enter 'y' or 'n'"
 	fi
 done
+InstallApps "${Fonts[@]}"
 
 # PowerLevel10k
 echo "- Installing powerlevel10k from git into GitApps directory"
