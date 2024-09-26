@@ -4,7 +4,9 @@ EssentialPackages=("kitty" "rofi-wayland" "neovim" "ly" "mako" "zsh" w"aybar" "p
 OptionalPackages=("pcmanfm" "ranger" "btop" "qt5ct" "zathura" "nwg-look" "fzf" "ripgrep")
 Fonts=("ttf-dejavu-nerd" "ttf-hack-nerd" "ttf-jetbrains-mono-nerd" "ttf-martian-mono-nerd")
 
-PackageManager="pacman --noconfirm -S"
+# needed skips installed and up-to-date
+# noconfirm removes confirmation
+PackageManager="pacman --needed --noconfirm -S"
 
 function MakeDir {
 	DirName="$1"
@@ -16,7 +18,6 @@ function MakeDir {
 
 function InstallApps {
 	for package in "$@"; do
-		echo "Installing Essential apps"
 		sudo $PackageManager "$package"
 	done
 }
@@ -83,7 +84,27 @@ else
 fi
 
 # Enabling login manager
-sudo systemctl enable ly
+# Get the name of the login manager
+displayManager=$(systemctl status display-manager.service | grep "loaded" | awk '{print $3}' | cut -d '.' -f 1 | rev | cut -d '/' -f 1 | rev)
+# If ly is not enabled
+if [[ $displayManager != "ly" ]]; then
+	while true; do
+		# Ask to enable
+		read -p "Disable the current login manager ($displayManager) for ly? (y/n)" confirmDisplay
+		if [[ $confirmDisplay =~ ^[yY]$ ]]; then
+			# Disable the current manager
+			sudo systemctl disable $displayManager
+			# Enable ly
+			sudo systemctl enable ly
+			break
+		elif [[ $confirmDisplay =~ ^[nN]$ ]]; then
+			# Else exit
+			break
+		else
+			echo "Invalid input. Enter 'y' or 'n'"
+		fi
+	done
+fi
 
 echo "- Script is finished"
 echo "- Logout out and log back in"
