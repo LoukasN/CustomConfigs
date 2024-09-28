@@ -62,11 +62,14 @@ while true; do
 		echo "Invalid input. Enter 'y' or 'n'"
 	fi
 done
+echo "Installing fonts"
 InstallApps "${Fonts[@]}"
 
 # PowerLevel10k
 echo "- Installing powerlevel10k from git into GitApps directory"
-mkdir ~/GitApps
+if [[ ! -d "~/GitApps" ]]; then
+	mkdir ~/GitApps
+fi
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/GitApps/powerlevel10k
 
 # Stow
@@ -77,7 +80,7 @@ stow --adopt .
 
 # Change the shell
 if [[ $SHELL =~ /zsh$ ]]; then
-	echo "- Shell is alredy zsh"
+	echo "- Shell is alredy set to zsh"
 else
 	echo "- Changing user shell to zsh"
 	chsh --shell "/usr/bin/zsh" $USER
@@ -107,4 +110,4 @@ if [[ $displayManager != "ly" ]]; then
 fi
 
 echo "- Script is finished"
-echo "- Logout out and log back in"
+echo "-- Please logout out and log back in"
