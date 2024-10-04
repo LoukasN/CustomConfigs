@@ -29,7 +29,7 @@ return {
 					transparent = false,
 				},
 			})
-			vim.cmd.colorscheme("carbonfox")
+			-- vim.cmd.colorscheme("carbonfox")
 		end,
 	},
 
@@ -41,7 +41,7 @@ return {
 				transparent = false,
 				style = "night", -- storm, moon, night, day
 			})
-			-- vim.cmd.colorscheme "tokyonight"
+			vim.cmd.colorscheme "tokyonight"
 		end,
 	},
 
