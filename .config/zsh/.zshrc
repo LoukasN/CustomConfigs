@@ -22,6 +22,7 @@ setopt hist_find_no_dups
 
 # Keybinds
 bindkey -e
+bindkey -v
 bindkey '^n' history-search-forward
 bindkey '^p' history-search-backward
 
@@ -39,6 +40,7 @@ source ~/GitApps/powerlevel10k/powerlevel10k.zsh-theme
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "jeffreytse/zsh-vi-mode"
 
 # Jump
 eval "$(zoxide init --cmd cd zsh)"
