@@ -5,8 +5,8 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				flavour = "mocha", -- latte, frappe, macchiato, mocha
-				transparent_background = false,
+				flavour = "macchiato", -- latte, frappe, macchiato, mocha
+				transparent_background = true,
 				integrations = {
 					cmp = true,
 					gitsigns = true,
@@ -16,7 +16,7 @@ return {
 					mini = false,
 				},
 			})
-			-- vim.cmd.colorscheme "catppuccin"
+			vim.cmd.colorscheme "catppuccin"
 		end,
 	},
 
@@ -39,9 +39,9 @@ return {
 		config = function()
 			require("tokyonight").setup({
 				transparent = false,
-				style = "night", -- storm, moon, night, day
+				style = "moon", -- storm, moon, night, day
 			})
-			vim.cmd.colorscheme "tokyonight"
+			-- vim.cmd.colorscheme "tokyonight"
 		end,
 	},
 
@@ -49,7 +49,7 @@ return {
 		"Mofiqul/dracula.nvim",
 		config = function()
 			require("dracula").setup({
-				transparent_bg = false,
+				transparent_bg = true,
 			})
 			-- vim.cmd.colorscheme("dracula")
 			-- vim.cmd.colorscheme("dracula-soft")
