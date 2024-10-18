@@ -26,4 +26,10 @@ return {
 			})
 		end,
 	},
+
+	{
+		-- Icons
+		"echasnovski/mini.icons",
+		version = false,
+	},
 }
