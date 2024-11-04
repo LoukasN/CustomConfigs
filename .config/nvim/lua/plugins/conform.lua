@@ -17,7 +17,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
-				c = { "clang" },
+				c = { "clang-format" },
 				css = { "prettier" },
 				html = { "prettier" },
 				markdown = { "prettier" },
