@@ -5,7 +5,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				flavour = "macchiato", -- latte, frappe, macchiato, mocha
+				flavour = "mocha", -- latte, frappe, macchiato, mocha
 				transparent_background = false,
 				integrations = {
 					cmp = true,
@@ -16,7 +16,7 @@ return {
 					mini = false,
 				},
 			})
-			-- vim.cmd.colorscheme "catppuccin"
+			vim.cmd.colorscheme "catppuccin"
 		end,
 	},
 
@@ -33,7 +33,7 @@ return {
 			-- vim.cmd.colorscheme("dawnfox")
 			-- vim.cmd.colorscheme("dayfox")
 			-- vim.cmd.colorscheme("duskfox")
-			vim.cmd.colorscheme("nightfox")
+			-- vim.cmd.colorscheme("nightfox")
 			-- vim.cmd.colorscheme("nordfox")
 		end,
 	},
