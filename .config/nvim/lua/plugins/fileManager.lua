@@ -13,7 +13,7 @@ return {
 		local function opts(desc)
 			return { desc = "nvim-tree: " .. desc, noremap = true, silent = true, nowait = true }
 		end
-		vim.keymap.set("n", "<c-cr>", api.tree.change_root_to_node, opts("cd"))
+		vim.keymap.set("n", "<leader><cr>", api.tree.change_root_to_node, opts("cd"))
 		-- Disabling Netrw
 		vim.g.loaded_netrw       = 1
 		vim.g.loaded_netrwPlugin = 1
