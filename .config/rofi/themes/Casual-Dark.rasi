@@ -171,7 +171,7 @@ textbox-prompt-colon {
 }
 
 configuration{
-    font:         "JetBrainsMonoNerdFont 12";
+    font:         "JetBrainsMonoNerdFont 14";
     display-drun: "Open";
     display-run:  "Execute";
     show-icons:   true;
