@@ -16,7 +16,7 @@ return {
 					mini = false,
 				},
 			})
-			vim.cmd.colorscheme("catppuccin")
+			-- vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 
@@ -26,14 +26,14 @@ return {
 		config = function()
 			require("nightfox").setup({
 				options = {
-					transparent = true,
+					transparent = false,
 				},
 			})
 			-- vim.cmd.colorscheme("carbonfox")
 			-- vim.cmd.colorscheme("dawnfox")
 			-- vim.cmd.colorscheme("dayfox")
 			-- vim.cmd.colorscheme("duskfox")
-			-- vim.cmd.colorscheme("nightfox")
+			vim.cmd.colorscheme("nightfox")
 			-- vim.cmd.colorscheme("nordfox")
 		end,
 	},
