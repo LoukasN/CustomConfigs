@@ -8,6 +8,9 @@ return {
 		vim.keymap.set("n", "<leader>ah", mark.add_file, {desc = "Add harpoon"})
 		vim.keymap.set("n", "<leader>ph", ui.toggle_quick_menu, {desc = "Harpoons"})
 
+		vim.keymap.set("n", "<A-Tab>", ui.nav_next, {desc = "Next harpoon"})
+		vim.keymap.set("n", "<A-S-Tab>", ui.nav_prev, {desc = "Previous harpoon"})
+
 		vim.keymap.set("n", "<A-1>", function() ui.nav_file(1) end)
 		vim.keymap.set("n", "<A-2>", function() ui.nav_file(2) end)
 		vim.keymap.set("n", "<A-3>", function() ui.nav_file(3) end)
