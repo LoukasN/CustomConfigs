@@ -1,17 +1,61 @@
--- Lazy.nvim
+-- Custom keymaps
+require("config.keymaps")
+-- Lazy package manager
+require("config.lazy")
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
+-- Enables numbers
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
-require("keymaps")
-require("lazy").setup("plugins")
+-- Disables Swapfile
+vim.opt.swapfile = false
+
+-- Disables backup
+vim.opt.backup = false
+
+-- Sets undo folder
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+-- Disables highligting search and enables incremental search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+-- Colors
+vim.opt.termguicolors = true
+
+-- Visible lines before scrolling
+vim.opt.scrolloff = 12
+
+-- No sidebars
+vim.opt.signcolumn = "no"
+
+-- faster update time
+vim.opt.updatetime = 50
+
+-- Tab has size of 4
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.smartindent = true
+
+-- highlight cursor line
+vim.cmd("set cursorline")
+
+-- Use system clipboard
+vim.o.clipboard = "unnamedplus"
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = "menuone,noselect"
+
+-- True colors
+vim.o.termguicolors = true
+
+-- Better highlighting when copying text
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
+})
