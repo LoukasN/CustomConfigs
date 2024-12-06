@@ -12,8 +12,8 @@ return {
 					gitsigns = true,
 					nvimtree = true,
 					treesitter = true,
-					notify = false,
-					mini = false,
+					notify = true,
+					mini = true,
 				},
 			})
 			-- vim.cmd.colorscheme("catppuccin")
@@ -27,6 +27,7 @@ return {
 			require("nightfox").setup({
 				options = {
 					transparent = true,
+					-- transparent = false,
 				},
 			})
 			-- vim.cmd.colorscheme("carbonfox")
@@ -35,7 +36,7 @@ return {
 			-- vim.cmd.colorscheme("duskfox")
 			-- vim.cmd.colorscheme("nightfox")
 			-- vim.cmd.colorscheme("nordfox")
-			vim.cmd.colorscheme("terafox")
+			-- vim.cmd.colorscheme("terafox")
 		end,
 	},
 
@@ -44,10 +45,14 @@ return {
 		priority = 1000,
 		config = function()
 			require("tokyonight").setup({
+				-- transparent = true,
 				transparent = false,
-				style = "moon", -- storm, moon, night, day
+				style = "moon",
+				-- style = "storm",
+				-- style = "night",
+				-- style = "day",
 			})
-			-- vim.cmd.colorscheme "tokyonight"
+			vim.cmd.colorscheme "tokyonight"
 		end,
 	},
 
@@ -56,6 +61,7 @@ return {
 		config = function()
 			require("dracula").setup({
 				transparent_bg = true,
+				-- transparent_bg = false,
 			})
 			-- vim.cmd.colorscheme("dracula")
 			-- vim.cmd.colorscheme("dracula-soft")
