@@ -32,4 +32,13 @@ return {
 		"echasnovski/mini.icons",
 		version = false,
 	},
+
+	{
+		-- Suround action for words
+		"echasnovski/mini.surround",
+		version = false,
+		config = function()
+			require("mini.surround").setup()
+		end,
+	},
 }
