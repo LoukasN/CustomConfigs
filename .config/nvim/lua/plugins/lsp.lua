@@ -60,7 +60,7 @@ return {
 			lspconfig.vhdl_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.typst_lsp.setup({
+			lspconfig.tinymist.setup({
 				capabilities = capabilities,
 			})
 
