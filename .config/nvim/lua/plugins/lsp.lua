@@ -23,6 +23,17 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
+		dependencies = {
+			{
+				"folke/lazydev.nvim",
+				ft = "lua", -- only load on lua files
+				opts = {
+					library = {
+						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+					},
+				},
+			},
+		},
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
@@ -44,12 +55,12 @@ return {
 					pylsp = {
 						plugins = {
 							pycodestyle = {
-								ignore = {'W391'},
-								maxLineLength = 100
-							}
-						}
-					}
-				}
+								ignore = { "W391" },
+								maxLineLength = 100,
+							},
+						},
+					},
+				},
 			})
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
@@ -64,9 +75,9 @@ return {
 				capabilities = capabilities,
 			})
 
-			vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, {desc = "Go to declaration"})
+			vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-			vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, {desc = "Go to implementation"})
+			vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Available code actions" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
