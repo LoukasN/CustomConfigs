@@ -81,8 +81,8 @@ return {
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Available code actions" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {desc = "Prev diagnostic"})
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {desc = "Next diagnostic"})
 			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, { desc = "Show information" })
 		end,
