@@ -8,7 +8,6 @@ return {
 	config = function()
 		require("nvim-tree").setup({})
 		vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>")
-		vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeOpen<cr>")
 		local api = require("nvim-tree.api")
 		local function opts(desc)
 			return { desc = "nvim-tree: " .. desc, noremap = true, silent = true, nowait = true }
