@@ -22,8 +22,8 @@ return {
 				html = { "prettier" },
 				markdown = { "prettier" },
 				sql = { "sqlfmt" },
-				hdl = { "vhdl_ls" },
 				typ = { "typstfmt" },
+				bash = { "beautysh" }
 			},
 			-- format_on_save = {
 			-- 	lsp_fallback = true,
