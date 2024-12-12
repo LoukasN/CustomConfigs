@@ -14,7 +14,7 @@ return {
 				"pylsp",
 				"lua_ls",
 				"clangd",
-				"typst_lsp",
+				"tinymist",
 				"bashls",
 			},
 			auto_install = true,
