@@ -1,11 +1,5 @@
 return {
 	{
-		-- Comments with gc and gcc
-		"echasnovski/mini.comment",
-		version = false,
-	},
-
-	{
 		-- Replace surrounding pairs
 		"echasnovski/mini.surround",
 		version = false,
