@@ -1,13 +1,12 @@
--- Custom keymaps
+-- Custom mappings
 require("config.keymaps")
 -- Lazy package manager
 require("config.lazy")
 
 -- Enables numbers
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.nu = true vim.opt.relativenumber = true
 
--- Disables Swapfile
+-- Disables swap
 vim.opt.swapfile = false
 
 -- Disables backup
@@ -17,7 +16,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- Disables highligting search and enables incremental search
+-- Disables highlighting search and enables incremental search
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
@@ -44,7 +43,7 @@ vim.cmd("set cursorline")
 -- Use system clipboard
 vim.o.clipboard = "unnamedplus"
 
--- Set completeopt to have a better completion experience
+-- Set to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
 
 -- True colors
@@ -59,3 +58,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
+
+-- Spellchecking
+vim.cmd("setlocal spell spelllang=en_us")
+vim.cmd("set iminsert=0 imsearch=-1")
+
+-- Vim movement in Greek language
+vim.o.langmap =
+	"ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz"
