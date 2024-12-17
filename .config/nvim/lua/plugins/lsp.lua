@@ -14,7 +14,7 @@ return {
 				"pylsp",
 				"lua_ls",
 				"clangd",
-				"tinymist",
+				"typst_lsp",
 				"bashls",
 			},
 			auto_install = true,
@@ -74,6 +74,12 @@ return {
 			lspconfig.tinymist.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.taplo.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.matlab_ls.setup({
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
@@ -87,4 +93,4 @@ return {
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, { desc = "Show information" })
 		end,
 	},
-}
+tinymist}
