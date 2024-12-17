@@ -9,9 +9,10 @@ return {
 			vim.keymap.set('n', '<leader>pg', builtin.live_grep, {desc = "Grep in files"})
 			-- Show buffers with telescope
 			vim.keymap.set("n", "<leader>pb", builtin.buffers, {desc = "Show open buffers"})
+			vim.keymap.set("n", "<leader>ps", builtin.lsp_document_symbols, {desc = "Show symbols"})
 		end
 	},
-	{
+		{
 		'nvim-telescope/telescope-ui-select.nvim',
 		config = function()
 			require("telescope").setup {
