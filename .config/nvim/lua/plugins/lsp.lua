@@ -35,7 +35,10 @@ return {
 			},
 		},
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- If using cmp_nvim
+			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- If using blink
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
@@ -73,6 +76,7 @@ return {
 			})
 			lspconfig.tinymist.setup({
 				capabilities = capabilities,
+				offset_encoding = "utf-8",
 			})
 			lspconfig.taplo.setup({
 				capabilities = capabilities,
@@ -87,10 +91,11 @@ return {
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Available code actions" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {desc = "Prev diagnostic"})
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {desc = "Next diagnostic"})
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, { desc = "Show information" })
 		end,
 	},
-tinymist}
+	tinymist,
+}
