@@ -1,9 +1,24 @@
 return {
 	{
-		"hrsh7th/cmp-nvim-lsp",
+		"saghen/blink.cmp",
+		dependencies = "rafamadriz/friendly-snippets",
+		version = "v0.*",
+		opts = {
+			keymap = { preset = "default" },
+			appearance = {
+				use_nvim_cmp_as_default = true,
+				nerd_font_variant = "mono",
+			},
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
+			signature = { enabled = true },
+		},
+		opts_extend = { "sources.default" },
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		enabled = false,
 		build = "make install_jsregexp",
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
@@ -12,6 +27,8 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		dependencies = { "hrsh7th/cmp-nvim-lsp" },
+		enabled = false,
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
