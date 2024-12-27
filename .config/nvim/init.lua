@@ -26,8 +26,8 @@ vim.opt.termguicolors = true
 -- Visible lines before scrolling
 vim.opt.scrolloff = 12
 
--- No sidebars
-vim.opt.signcolumn = "no"
+-- Sidebar 1
+vim.opt.signcolumn = "yes:1"
 
 -- faster update time
 vim.opt.updatetime = 50
