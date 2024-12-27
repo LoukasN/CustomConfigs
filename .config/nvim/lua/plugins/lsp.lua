@@ -14,7 +14,6 @@ return {
 				"pylsp",
 				"lua_ls",
 				"clangd",
-				"typst_lsp",
 				"bashls",
 			},
 			auto_install = true,
@@ -97,5 +96,4 @@ return {
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, { desc = "Show information" })
 		end,
 	},
-	tinymist,
 }
