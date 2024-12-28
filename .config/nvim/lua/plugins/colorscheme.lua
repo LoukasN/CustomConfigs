@@ -24,7 +24,7 @@ return {
 	{
 		"EdenEast/nightfox.nvim",
 		priority = 1000,
-		enabled = false,
+		enabled = true,
 		config = function()
 			require("nightfox").setup({
 				options = {
@@ -44,7 +44,7 @@ return {
 	{
 		"folke/tokyonight.nvim",
 		priority = 1000,
-		enabled = true,
+		enabled = false,
 		config = function()
 			require("tokyonight").setup({
 				-- transparent = true,
