@@ -1,10 +1,11 @@
-theme = "Dark Pastel"
-font-family = "JetBrainsMono Nerd Font"
+theme = Dark Pastel
+font-family = JetBrainsMono Nerd Font
 font-size = 14
 font-feature = -calt
 adjust-cursor-thickness = 10
 cursor-style = block
 background-opacity = 0.85
+confirm-close-surface = false
 gtk-titlebar = false
 gtk-adwaita = false
 bold-is-bright = true
