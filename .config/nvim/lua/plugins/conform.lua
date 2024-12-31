@@ -23,19 +23,12 @@ return {
 				markdown = { "prettier" },
 				sql = { "sqlfmt" },
 				typ = { "typstfmt" },
-				bash = { "beautysh" }
+				bash = { "beautysh" },
 			},
 			-- format_on_save = {
 			-- 	lsp_fallback = true,
 			-- 	timeout_ms = 500,
 			-- },
 		})
-		require("conform").formatters.clang = function(bufnr)
-			return {
-				command = require("conform.util").find_executable({
-					"usr/bin/clang",
-				}, "clang"),
-			}
-		end
 	end,
 }
