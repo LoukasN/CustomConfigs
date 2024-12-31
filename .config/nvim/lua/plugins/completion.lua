@@ -16,6 +16,7 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
+
 	{
 		"L3MON4D3/LuaSnip",
 		enabled = false,
@@ -25,6 +26,18 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 	},
+	-- vim.keymap.set({ "i", "s" }, "<c-k>", function()
+	-- 	if require("luasnip").expand_or_jumpable() then
+	-- 		require("luasnip").expand_or_jump()
+	-- 	end
+	-- end, { silent = true }),
+	--
+	-- vim.keymap.set({ "i", "s" }, "<c-j>", function()
+	-- 	if require("luasnip").jumpable(-1) then
+	-- 		require("luasnip").jump(-1)
+	-- 	end
+	-- end, { silent = true })
+
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = { "hrsh7th/cmp-nvim-lsp" },
@@ -58,15 +71,4 @@ return {
 			})
 		end,
 	},
-	vim.keymap.set({ "i", "s" }, "<c-k>", function()
-		if require("luasnip").expand_or_jumpable() then
-			require("luasnip").expand_or_jump()
-		end
-	end, { silent = true }),
-
-	vim.keymap.set({ "i", "s" }, "<c-j>", function()
-		if require("luasnip").jumpable(-1) then
-			require("luasnip").jump(-1)
-		end
-	end, { silent = true }),
 }
