@@ -10,3 +10,13 @@ gtk-titlebar = false
 gtk-adwaita = false
 bold-is-bright = true
 resize-overlay = never
+
+keybind = unconsumed:alt+five=goto_tab:5
+keybind = unconsumed:alt+eight=goto_tab:8
+keybind = unconsumed:alt+three=goto_tab:3
+keybind = unconsumed:alt+nine=goto_tab:9
+keybind = unconsumed:alt+two=goto_tab:2
+keybind = unconsumed:alt+four=goto_tab:4
+keybind = unconsumed:alt+one=goto_tab:1
+keybind = unconsumed:alt+six=goto_tab:6
+keybind = unconsumed:alt+seven=goto_tab:7
