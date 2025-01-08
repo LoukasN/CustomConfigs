@@ -3,7 +3,7 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
-		enabled = false,
+		enabled = true,
 		config = function()
 			require("catppuccin").setup({
 				flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -24,7 +24,7 @@ return {
 	{
 		"EdenEast/nightfox.nvim",
 		priority = 1000,
-		enabled = true,
+		enabled = false,
 		config = function()
 			require("nightfox").setup({
 				options = {
