@@ -2,7 +2,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		dependencies = "rafamadriz/friendly-snippets",
-		version = "v0.7.6",
+		version = "*",
 		opts = {
 			keymap = { preset = "default" },
 			appearance = {
@@ -26,17 +26,6 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 	},
-	-- vim.keymap.set({ "i", "s" }, "<c-k>", function()
-	-- 	if require("luasnip").expand_or_jumpable() then
-	-- 		require("luasnip").expand_or_jump()
-	-- 	end
-	-- end, { silent = true }),
-	--
-	-- vim.keymap.set({ "i", "s" }, "<c-j>", function()
-	-- 	if require("luasnip").jumpable(-1) then
-	-- 		require("luasnip").jump(-1)
-	-- 	end
-	-- end, { silent = true })
 
 	{
 		"hrsh7th/nvim-cmp",
