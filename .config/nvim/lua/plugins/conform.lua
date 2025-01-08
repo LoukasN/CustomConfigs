@@ -18,6 +18,7 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 				c = { "clang-format" },
+				cpp = { "clang-format" },
 				css = { "prettier" },
 				html = { "prettier" },
 				markdown = { "prettier" },
