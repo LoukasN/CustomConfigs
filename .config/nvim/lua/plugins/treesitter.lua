@@ -4,7 +4,10 @@ return {
 	config = function()
 		local config = require("nvim-treesitter.configs")
 		config.setup({
+			modules = {},
 			ensure_installed = { "lua", "c", "bash", "markdown" },
+			sync_install = true,
+			ignore_install = {},
 			auto_install = true,
 			highlight = { enable = true },
 			indent = { enable = true },
