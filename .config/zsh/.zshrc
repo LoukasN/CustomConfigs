@@ -22,7 +22,6 @@ setopt hist_find_no_dups
 
 # Keybinds
 bindkey -e
-bindkey -v
 bindkey '^n' history-search-forward
 bindkey '^p' history-search-backward
 
