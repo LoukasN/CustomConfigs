@@ -3,7 +3,7 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
-		enabled = true,
+		enabled = false,
 		config = function()
 			require("catppuccin").setup({
 				flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -24,19 +24,19 @@ return {
 	{
 		"EdenEast/nightfox.nvim",
 		priority = 1000,
-		enabled = false,
+		enabled = true,
 		config = function()
 			require("nightfox").setup({
 				options = {
 					transparent = true,
 				},
 			})
-			vim.cmd.colorscheme("carbonfox")
+			-- vim.cmd.colorscheme("carbonfox")
 			-- vim.cmd.colorscheme("dawnfox")
 			-- vim.cmd.colorscheme("dayfox")
 			-- vim.cmd.colorscheme("duskfox")
 			-- vim.cmd.colorscheme("nightfox")
-			-- vim.cmd.colorscheme("nordfox")
+			vim.cmd.colorscheme("nordfox")
 			-- vim.cmd.colorscheme("terafox")
 		end,
 	},
